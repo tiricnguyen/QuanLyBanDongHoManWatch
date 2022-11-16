@@ -467,9 +467,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
@@ -541,9 +538,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSerialActionPerformed"/>
@@ -576,9 +570,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -613,9 +604,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHangDongHoActionPerformed"/>
@@ -648,9 +636,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -708,9 +693,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDayActionPerformed"/>
@@ -744,9 +726,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMatDongHoActionPerformed"/>
@@ -756,9 +735,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -815,9 +791,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -933,18 +906,12 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_35px.png"/>
-                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnXoa">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_hide_35px.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -953,9 +920,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_female_user_update_35px.png"/>
-                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnImport">
@@ -963,18 +927,12 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_import_30px.png"/>
-                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnExport">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_export_30px.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -1082,9 +1040,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_female_user_update_35px.png"/>
                 </Property>
               </Properties>
             </Component>

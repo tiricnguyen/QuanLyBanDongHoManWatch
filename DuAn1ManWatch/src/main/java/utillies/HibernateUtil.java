@@ -1,6 +1,15 @@
 package utillies;
 
-import domainModel.KhachHang;
+
+import domainModel.ChatLieuMatKinh;
+import domainModel.ChatLieuVo;
+import domainModel.HangDongHo;
+import domainModel.LoaiDongHo;
+import domainModel.MatDongHo;
+import domainModel.NangLuongSuDung;
+import domainModel.SanPham;
+import domainModel.ChatLieuDay;
+import domainModel.ChiTietSanPham;
 import java.util.Properties;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,9 +34,16 @@ public class HibernateUtil {
         properties.put(Environment.PASS, "123456");
         properties.put(Environment.SHOW_SQL, "true");
 //        properties.put(Environment.HBM2DDL_AUTO, "create");//gen DB tự động
-        conf.addAnnotatedClass(KhachHang.class);
 
-//        conf.addAnnotatedClass(GioHangChiTiet.class);
+        conf.addAnnotatedClass(ChatLieuDay.class);
+        conf.addAnnotatedClass(ChatLieuMatKinh.class);
+        conf.addAnnotatedClass(ChatLieuVo.class);
+        conf.addAnnotatedClass(HangDongHo.class);
+        conf.addAnnotatedClass(LoaiDongHo.class);
+        conf.addAnnotatedClass(MatDongHo.class);
+        conf.addAnnotatedClass(NangLuongSuDung.class);
+        conf.addAnnotatedClass(SanPham.class);
+        conf.addAnnotatedClass(ChiTietSanPham.class);
         conf.setProperties(properties);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
