@@ -17,19 +17,14 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
         return ctspRepo.getAllResponse();
     }
 
-    public static void main(String[] args) {
-        List<ChiTietSanPhamResponse> list = new ArrayList<>();
-        list = new ChiTietSanPhamServiceImpl().getAllResponse();
-        for (ChiTietSanPhamResponse x : list) {
-            System.out.println(x.getId());
-        }
 
-    }
 
     @Override
     public String insert(ChiTietSanPham chiTietSanPham) {
+        ChiTietSanPham ctspFind = ctspRepo.findByMa(chiTietSanPham.getChatLieuDay().getTen());
+        
         ctspRepo.saveOrUpdate(chiTietSanPham);
-
+        
         if (chiTietSanPham != null) {
             return "Thêm Thành Công !!";
         } else {

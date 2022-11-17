@@ -51,10 +51,13 @@ public class viewMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1503, 828)
-        );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -181,7 +184,7 @@ public class viewMain extends javax.swing.JFrame {
         pnlCards.setLayout(pnlCardsLayout);
         pnlCardsLayout.setHorizontalGroup(
             pnlCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1235, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         pnlCardsLayout.setVerticalGroup(
             pnlCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,6 +275,10 @@ public class viewMain extends javax.swing.JFrame {
 //        this.pack();
 //        pnlCards.setVisible(true);
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1MouseClicked
 
     /**
      * @param args the command line arguments

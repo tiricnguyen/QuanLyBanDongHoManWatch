@@ -117,7 +117,7 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
         btnThêm.setBackground(new java.awt.Color(0, 153, 255));
         btnThêm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThêm.setForeground(new java.awt.Color(255, 255, 255));
-        btnThêm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/icons8_add_30px_1.png"))); // NOI18N
+        btnThêm.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnThêm.setText("Thêm");
 
         btnCapNhap.setBackground(new java.awt.Color(0, 153, 255));
@@ -129,7 +129,7 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
         btnAn.setBackground(new java.awt.Color(0, 153, 255));
         btnAn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAn.setForeground(new java.awt.Color(255, 255, 255));
-        btnAn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/icons8_hide_30px.png"))); // NOI18N
+        btnAn.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_hide_30px.png")); // NOI18N
         btnAn.setText("Ẩn");
 
         btnNhapExcel.setBackground(new java.awt.Color(0, 153, 255));
@@ -350,19 +350,11 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable tblChatLieuDay;
-    private javax.swing.JTable tblChatLieuDay1;
-    private javax.swing.JTable tblChatLieuDay2;
     private javax.swing.JTable tblChatLieuDay3;
     private javax.swing.JTextField txtMa;
     private javax.swing.JTextField txtTen;

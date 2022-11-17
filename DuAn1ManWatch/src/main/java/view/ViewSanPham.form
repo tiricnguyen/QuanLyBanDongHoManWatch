@@ -121,7 +121,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnNhapExcel" alignment="1" max="32767" attributes="0"/>
                           <Component id="btnAn" alignment="1" max="32767" attributes="0"/>
@@ -151,7 +151,7 @@
                               <Component id="btnXuatExcel" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -276,7 +276,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
+                  <Image iconType="2" name="C:\Users\duongnl\Desktop\QuanLyDongHoManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_30px_1.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
@@ -293,7 +293,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_female_user_update_35px.png"/>
+                  <Image iconType="2" name="C:\Users\duongnl\Desktop\QuanLyDongHoManWatch\DuAn1ManWatch\src\main\java\folder\icons8_update_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="C&#x1ead;p Nh&#x1ead;p"/>
               </Properties>
@@ -310,7 +310,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_hide_30px.png"/>
+                  <Image iconType="2" name="C:\Users\duongnl\Desktop\QuanLyDongHoManWatch\DuAn1ManWatch\src\main\java\folder\icons8_hide_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x1ea8;n"/>
               </Properties>
@@ -327,7 +327,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_import_30px.png"/>
+                  <Image iconType="2" name="C:\Users\duongnl\Desktop\QuanLyDongHoManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_import_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p"/>
               </Properties>
@@ -344,7 +344,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_export_30px.png"/>
+                  <Image iconType="2" name="C:\Users\duongnl\Desktop\QuanLyDongHoManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_export_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t"/>
               </Properties>
