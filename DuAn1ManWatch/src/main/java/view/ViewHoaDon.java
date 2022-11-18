@@ -15,8 +15,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.type.LocalDateTimeType;
-import service.KhachHangService;
-import service.impl.KhachHangServiceImpl;
+//import service.KhachHangService;
+//import service.impl.KhachHangServiceImpl;
 import viewModel.KhachHangResponse;
 //import service.impl.KhachHangServiceImpl;
 
@@ -27,9 +27,9 @@ public class ViewHoaDon extends javax.swing.JPanel {
      */
     public ViewHoaDon() {
         initComponents();
-        loadTable(khImpl.getAllResponse());
+//        loadTable(khImpl.getAllResponse());
     }
-    private KhachHangService khImpl = new KhachHangServiceImpl();
+//    private KhachHangService khImpl = new KhachHangServiceImpl();
     private List<KhachHangResponse> listKh = new ArrayList<>();
 
     private void loadTable(List<KhachHangResponse> list) {
@@ -233,12 +233,12 @@ public class ViewHoaDon extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseClicked
-        int i = tblKhachHang.getSelectedRow();
-        txtMa.setText(khImpl.getAllResponse().get(i).getMa());
-        txtHoTen.setText(khImpl.getAllResponse().get(i).getHoVaTen());
-        txtDiaChi.setText(khImpl.getAllResponse().get(i).getDiaChi());
-        txtNgaySinh.setDate(LocalDate.parse(khImpl.getAllResponse().get(i).getNgaySinh()));
-        txtSdt.setText(khImpl.getAllResponse().get(i).getSdt());
+//        int i = tblKhachHang.getSelectedRow();
+//        txtMa.setText(khImpl.getAllResponse().get(i).getMa());
+//        txtHoTen.setText(khImpl.getAllResponse().get(i).getHoVaTen());
+//        txtDiaChi.setText(khImpl.getAllResponse().get(i).getDiaChi());
+//        txtNgaySinh.setDate(LocalDate.parse(khImpl.getAllResponse().get(i).getNgaySinh()));
+//        txtSdt.setText(khImpl.getAllResponse().get(i).getSdt());
 
 
     }//GEN-LAST:event_tblKhachHangMouseClicked

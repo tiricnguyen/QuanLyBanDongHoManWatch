@@ -22,7 +22,7 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
     public ViewLoaiDongHo() {
         initComponents();
         setLocationRelativeTo(null);
-        loadTable(ldhImpl.getAllRespone());
+//        loadTable(ldhImpl.getAllRespone());
     }
 
     private void loadTable(List<LoaiDongHoResponse> list){

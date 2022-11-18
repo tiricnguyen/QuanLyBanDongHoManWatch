@@ -15,21 +15,21 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.type.LocalDateTimeType;
-import service.KhachHangService;
-import service.impl.KhachHangServiceImpl;
+//import service.KhachHangService;
+//import service.impl.KhachHangServiceImpl;
 import viewModel.KhachHangResponse;
 //import service.impl.KhachHangServiceImpl;
 
 public class ViewKhachHang extends javax.swing.JPanel {
 
-    private KhachHangService khImpl = new KhachHangServiceImpl();
+//    private KhachHangService khImpl = new KhachHangServiceImpl();
     private List<KhachHangResponse> listKh = new ArrayList<>();
 
     //private List<KhachHang> list = new ArrayList<>();
 
     public ViewKhachHang() {
         initComponents();
-        listKh = khImpl.getAllResponse();
+//        listKh = khImpl.getAllResponse();
         loadTable(listKh);
     }
 
@@ -394,7 +394,7 @@ public class ViewKhachHang extends javax.swing.JPanel {
 
         kh.setMa(txtMa.getText());
         kh.setHoVaTen(txtHoTen.getText());
-        kh.setNgaySinh(txtNgaySinh.getText());
+//        kh.setNgaySinh(txtNgaySinh.getText());
 
         kh.setDiaChi(txtDiaChi.getText());
         kh.setSdt(txtSdt.getText());
@@ -404,20 +404,20 @@ public class ViewKhachHang extends javax.swing.JPanel {
             kh.setTrangThai(1);
         }
 
-        String check = khImpl.insert(kh);
-        JOptionPane.showMessageDialog(this, check);
-        listKh = khImpl.getAllResponse();
-        loadTable(listKh);
+//        String check = khImpl.insert(kh);
+//        JOptionPane.showMessageDialog(this, check);
+//        listKh = khImpl.getAllResponse();
+//        loadTable(listKh);
 
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void tblKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseClicked
-        int i = tblKhachHang.getSelectedRow();
-        txtMa.setText(khImpl.getAllResponse().get(i).getMa());
-        txtHoTen.setText(khImpl.getAllResponse().get(i).getHoVaTen());
-        txtDiaChi.setText(khImpl.getAllResponse().get(i).getDiaChi());
-        txtNgaySinh.setDate(LocalDate.parse(khImpl.getAllResponse().get(i).getNgaySinh()));
-        txtSdt.setText(khImpl.getAllResponse().get(i).getSdt());
+//        int i = tblKhachHang.getSelectedRow();
+//        txtMa.setText(khImpl.getAllResponse().get(i).getMa());
+//        txtHoTen.setText(khImpl.getAllResponse().get(i).getHoVaTen());
+//        txtDiaChi.setText(khImpl.getAllResponse().get(i).getDiaChi());
+//        txtNgaySinh.setDate(LocalDate.parse(khImpl.getAllResponse().get(i).getNgaySinh()));
+//        txtSdt.setText(khImpl.getAllResponse().get(i).getSdt());
 
 
     }//GEN-LAST:event_tblKhachHangMouseClicked
@@ -430,7 +430,7 @@ public class ViewKhachHang extends javax.swing.JPanel {
             kh.setId(listKh.get(tblKhachHang.getSelectedRow()).getId());
             kh.setMa(txtMa.getText());
             kh.setHoVaTen(txtHoTen.getText());
-            kh.setNgaySinh(txtNgaySinh.getText());
+//            kh.setNgaySinh(txtNgaySinh.getText());
 
             kh.setDiaChi(txtDiaChi.getText());
             kh.setSdt(txtSdt.getText());
@@ -440,10 +440,10 @@ public class ViewKhachHang extends javax.swing.JPanel {
                 kh.setTrangThai(1);
             }
 
-            String check = khImpl.update(kh);
-            JOptionPane.showMessageDialog(this, check);
-            listKh = khImpl.getAllResponse();
-            loadTable(listKh);
+//            String check = khImpl.update(kh);
+//            JOptionPane.showMessageDialog(this, check);
+//            listKh = khImpl.getAllResponse();
+//            loadTable(listKh);
 
         } catch (Exception e) {
             System.out.println(e);
