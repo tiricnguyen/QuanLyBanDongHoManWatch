@@ -10,9 +10,13 @@ package view;
 import domainModel.ChatLieuDay;
 import domainModel.ChatLieuMatKinh;
 import domainModel.ChatLieuVo;
+import domainModel.ChiTietSanPham;
 import domainModel.LoaiDongHo;
 import domainModel.NangLuongSuDung;
+import java.math.BigDecimal;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import service.ChatLieuDayService;
 import service.ChatLieuMatKinhService;
@@ -50,13 +54,14 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private ChatLieuDayService chatLieuDayImpl = new ChatLieuDayServiceImpl();
     private ChatLieuMatKinhService chatLieuMatKinhImpl = new ChatLieuMatKinhServiceImpl();
     private ChatLieuVoService chatLieuVoImpl = new ChatLieuVoServiceImpl();
+    DefaultComboBoxModel model;
 
     public ViewChiTietSanPham() {
         initComponents();
 
         loadTable(chiTietSanPhamImpl.getAllResponse());
 
-        loadComboBox();
+        loadCbxLoaiDongHo(loaiDongHoImpl.getAll());
     }
 
     private void loadTable(List<ChiTietSanPhamResponse> listSP) {
@@ -72,46 +77,28 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
     }
 
-    private void loadComboBox() {
-        cbxHangDongHo.removeAllItems();
-        for (domainModel.HangDongHo x : hangDongHoImpl.getAll()) {
-            cbxHangDongHo.addItem(x.getTen());
-        }
+//    private ChiTietSanPham getFormData() {
+//
+//        Double sizeDay = Double.parseDouble(txtSizeDay.getText().trim());
+//        String chongNuoc = txtChongNuoc.getText().trim();
+//        String moTa = txtMoTa.getText().trim();
+//
+//        ChiTietSanPham ctsp = new ChiTietSanPham();
+//        return ctsp;
+//    }
+    private void loadCbxLoaiDongHo(List<LoaiDongHo> list) {
 
-        cbxDay.removeAllItems();
-        for (ChatLieuDay x : chatLieuDayImpl.getAll()) {
-            cbxDay.addItem(x.getTen());
+        cbxLoaiDongHo.setModel(model);
+        for (LoaiDongHo x : list) {
+            model.addElement(x);
         }
+    }
 
-        cbxLoaiDongHo.removeAllItems();
-        for (LoaiDongHo x : loaiDongHoImpl.getAll()) {
-            cbxLoaiDongHo.addItem(x.getTen());
-        }
-
-        cbxMatDongHo.removeAllItems();
-        for (domainModel.MatDongHo x : matDongHoImpl.getAll()) {
-            cbxMatDongHo.addItem(x.getKieuMat());
-        }
-
-        cbxMatKinh.removeAllItems();
-        for (ChatLieuMatKinh x : chatLieuMatKinhImpl.getAll()) {
-            cbxMatKinh.addItem(x.getTen());
-        }
-
-        cbxNangLuong.removeAllItems();
-        for (NangLuongSuDung x : nangLuongSuDungImpl.getAll()) {
-            cbxNangLuong.addItem(x.getTen());
-        }
-
-        cbxTenSanPham.removeAllItems();
-        for (domainModel.SanPham x : sanPhamImpl.getAll()) {
-            cbxTenSanPham.addItem(x.getTen());
-        }
-
-        cbxVo.removeAllItems();
-        for (ChatLieuVo x : chatLieuVoImpl.getAll()) {
-            cbxVo.addItem(x.getTen());
-        }
+    private ChiTietSanPham getFormData() {
+        ChiTietSanPham ctsp = new ChiTietSanPham();
+//        LoaiDongHo ldh = (LoaiDongHo) cbxLoaiDongHo.getSelectedItem();
+//        ctsp.setLoaiDongHo(lhd);
+        return ctsp;
     }
 
     @SuppressWarnings("unchecked")
@@ -134,7 +121,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         cbxSerial = new javax.swing.JComboBox<>();
         btnSerial = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        cbxLoaiDongHo = new javax.swing.JComboBox<LoaiDongHo>();
         btnLoaiDongHo = new javax.swing.JButton();
         cbxHangDongHo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
@@ -173,6 +159,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         txtSoLuong = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtTimKiemSanPham = new javax.swing.JTextField();
+        cbxLoaiDongHo = new javax.swing.JComboBox<LoaiDongHo>();
         jPanel1 = new javax.swing.JPanel();
         btnCapNhapDaXoa = new javax.swing.JButton();
         txtTimKiemSanPhamDaXoa = new javax.swing.JTextField();
@@ -255,8 +242,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Loại Đồng Hồ:");
-
-        cbxLoaiDongHo.setModel(new javax.swing.DefaultComboBoxModel<LoaiDongHo>());
 
         btnLoaiDongHo.setBackground(new java.awt.Color(0, 153, 255));
         btnLoaiDongHo.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
@@ -377,6 +362,11 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         btnThem.setBackground(new java.awt.Color(0, 153, 255));
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         btnXoa.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -433,6 +423,8 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         txtTimKiemSanPham.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTimKiemSanPham.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 153, 255)));
+
+        cbxLoaiDongHo.setModel(new javax.swing.DefaultComboBoxModel<LoaiDongHo>());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -611,9 +603,9 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cbxLoaiDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btnLoaiDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnLoaiDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cbxLoaiDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -694,7 +686,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1152, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1151, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
@@ -789,6 +781,17 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         new ViewSanPham().setVisible(true);
     }//GEN-LAST:event_btnTenSanPhamActionPerformed
 
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        try {
+            ChiTietSanPham ctsp = getFormData();
+            String check = chiTietSanPhamImpl.insert(ctsp);
+            JOptionPane.showMessageDialog(this, check);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_btnThemActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ImageSanPham;
@@ -810,7 +813,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private javax.swing.JCheckBox cbTrangThai;
     private javax.swing.JComboBox<String> cbxDay;
     private javax.swing.JComboBox<String> cbxHangDongHo;
-    private javax.swing.JComboBox<LoaiDongHo> cbxLoaiDongHo;
+    private javax.swing.JComboBox<String> cbxLoaiDongHo;
     private javax.swing.JComboBox<String> cbxMatDongHo;
     private javax.swing.JComboBox<String> cbxMatKinh;
     private javax.swing.JComboBox<String> cbxNangLuong;

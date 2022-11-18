@@ -16,7 +16,6 @@ import lombok.Data;
 
 import lombok.NoArgsConstructor;
 
-
 /**
  *
  * @author congh
@@ -42,9 +41,6 @@ public class LoaiDongHo implements Serializable {
     @Column(name = "TrangThai")
     private int trangThai;
 
-    @Override
-    public String toString() {
-        return "LoaiDongHo{" + "id=" + id + ", ma=" + ma + ", ten=" + ten + ", trangThai=" + trangThai + '}';
-    }
+   
 
 }

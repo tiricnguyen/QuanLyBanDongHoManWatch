@@ -1,10 +1,13 @@
 package service.impl;
 
+import domainModel.ChatLieuDay;
 import domainModel.ChiTietSanPham;
+import domainModel.LoaiDongHo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import repository.impl.ChiTietSanPhamRepository;
+import repository.impl.LoaiDongHoRepository;
 import service.ChiTietSanPhamService;
 import viewModel.ChiTietSanPhamResponse;
 
@@ -12,19 +15,23 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
 
     ChiTietSanPhamRepository ctspRepo = new ChiTietSanPhamRepository();
 
+    LoaiDongHoRepository ldh = new LoaiDongHoRepository();
+
     @Override
     public List<ChiTietSanPhamResponse> getAllResponse() {
         return ctspRepo.getAllResponse();
     }
 
-
+//    @Override
+//    public String findIdCbx(String cbx) {
+//         ldh.findByMa(cbx);
+//        return "Thanh Cong Nhung chua thay dau!";
+//    }
 
     @Override
     public String insert(ChiTietSanPham chiTietSanPham) {
-        ChiTietSanPham ctspFind = ctspRepo.findByMa(chiTietSanPham.getChatLieuDay().getTen());
-        
         ctspRepo.saveOrUpdate(chiTietSanPham);
-        
+
         if (chiTietSanPham != null) {
             return "Thêm Thành Công !!";
         } else {
