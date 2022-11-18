@@ -22,11 +22,11 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
         return ctspRepo.getAllResponse();
     }
 
-//    @Override
-//    public String findIdCbx(String cbx) {
-//         ldh.findByMa(cbx);
-//        return "Thanh Cong Nhung chua thay dau!";
-//    }
+    @Override
+    public LoaiDongHo findIdCbx(String cbx) {
+        LoaiDongHo loaidonho = ldh.findByMa(cbx);
+        return loaidonho;
+    }
 
     @Override
     public String insert(ChiTietSanPham chiTietSanPham) {

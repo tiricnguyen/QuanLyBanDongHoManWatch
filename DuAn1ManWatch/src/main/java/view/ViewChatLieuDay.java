@@ -128,31 +128,31 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
         btnThêm.setBackground(new java.awt.Color(0, 153, 255));
         btnThêm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThêm.setForeground(new java.awt.Color(255, 255, 255));
-        btnThêm.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
+        btnThêm.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnThêm.setText("Thêm");
 
         btnCapNhap.setBackground(new java.awt.Color(0, 153, 255));
         btnCapNhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCapNhap.setForeground(new java.awt.Color(255, 255, 255));
-        btnCapNhap.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_update_30px.png")); // NOI18N
+        btnCapNhap.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
         btnCapNhap.setText("Cập Nhập");
 
         btnAn.setBackground(new java.awt.Color(0, 153, 255));
         btnAn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAn.setForeground(new java.awt.Color(255, 255, 255));
-        btnAn.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_hide_30px.png")); // NOI18N
+        btnAn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_hide_30px.png")); // NOI18N
         btnAn.setText("Ẩn");
 
         btnNhapExcel.setBackground(new java.awt.Color(0, 153, 255));
         btnNhapExcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnNhapExcel.setForeground(new java.awt.Color(255, 255, 255));
-        btnNhapExcel.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_import_30px.png")); // NOI18N
+        btnNhapExcel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_import_30px.png")); // NOI18N
         btnNhapExcel.setText("Nhập");
 
         btnXuatExcel.setBackground(new java.awt.Color(0, 153, 255));
         btnXuatExcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnXuatExcel.setForeground(new java.awt.Color(255, 255, 255));
-        btnXuatExcel.setIcon(new javax.swing.ImageIcon("C:\\Users\\duongnl\\Desktop\\QuanLyDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_30px.png")); // NOI18N
+        btnXuatExcel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_30px.png")); // NOI18N
         btnXuatExcel.setText("Xuất");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -186,7 +186,7 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                         .addComponent(btnNhapExcel)
                         .addGap(25, 25, 25)
                         .addComponent(btnXuatExcel)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 17, Short.MAX_VALUE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -286,13 +286,13 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)))
+                        .addComponent(jTabbedPane1))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 

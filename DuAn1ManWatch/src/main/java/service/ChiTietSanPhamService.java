@@ -14,5 +14,5 @@ public interface ChiTietSanPhamService {
 
     String update(ChiTietSanPham chiTietSanPham);
 
-//    String findIdCbx(String ten);
+    LoaiDongHo findIdCbx(String ten);
 }
