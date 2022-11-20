@@ -19,4 +19,9 @@ public class MatDongHoServiceImpl implements MatDongHoService {
         return matDongHoRepository.getAll();
     }
 
+    @Override
+    public MatDongHo findIdCbx(String ten) {
+        return matDongHoRepository.findIdCbx(ten);
+    }
+
 }

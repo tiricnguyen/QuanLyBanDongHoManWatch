@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface LoaiDongHoService {
     List<LoaiDongHo> getAll();
+    
+    LoaiDongHo findIdCbx(String ten);
 }

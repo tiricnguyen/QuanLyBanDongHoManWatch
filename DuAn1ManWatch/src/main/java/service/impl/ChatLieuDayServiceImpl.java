@@ -8,24 +8,22 @@ import service.ChatLieuDayService;
 
 public class ChatLieuDayServiceImpl implements ChatLieuDayService{
 
-    private ChatLieuDayRepository chatLieuDayService ;
+    private ChatLieuDayRepository chatLieuDayRepository ;
 
     public ChatLieuDayServiceImpl() {
-        chatLieuDayService = new ChatLieuDayRepository();
+        chatLieuDayRepository = new ChatLieuDayRepository();
     }
     
     
     @Override
     public List<ChatLieuDay> getAll() {
-        return chatLieuDayService.getAll();
+        return chatLieuDayRepository.getAll();
     }
-    
-    public static void main(String[] args) {
-        ChatLieuDayRepository chatLieuDayService = new ChatLieuDayRepository();
-        
-        for (ChatLieuDay x : chatLieuDayService.getAll()) {
-            System.out.println(x.toString());
-        }
+
+
+    @Override
+    public ChatLieuDay findIdCbx(String ten) {
+        return chatLieuDayRepository.findIdCbx(ten);
     }
     
 }

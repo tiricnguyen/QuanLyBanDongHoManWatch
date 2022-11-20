@@ -1,13 +1,8 @@
 package service.impl;
 
-import domainModel.ChatLieuDay;
 import domainModel.ChiTietSanPham;
-import domainModel.LoaiDongHo;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import repository.impl.ChiTietSanPhamRepository;
-import repository.impl.LoaiDongHoRepository;
 import service.ChiTietSanPhamService;
 import viewModel.ChiTietSanPhamResponse;
 
@@ -15,17 +10,9 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
 
     ChiTietSanPhamRepository ctspRepo = new ChiTietSanPhamRepository();
 
-    LoaiDongHoRepository ldh = new LoaiDongHoRepository();
-
     @Override
     public List<ChiTietSanPhamResponse> getAllResponse() {
         return ctspRepo.getAllResponse();
-    }
-
-    @Override
-    public LoaiDongHo findIdCbx(String cbx) {
-        LoaiDongHo loaidonho = ldh.findByMa(cbx);
-        return loaidonho;
     }
 
     @Override

@@ -6,4 +6,6 @@ import java.util.List;
 public interface NangLuongSuDungService {
 
     List<NangLuongSuDung> getAll();
+    
+    NangLuongSuDung findIdCbx(String ten);
 }

@@ -19,4 +19,9 @@ public class NangLuongSuDungServiceImpl implements NangLuongSuDungService {
         return nangLuongSuDungRepository.getAll();
     }
 
+    @Override
+    public NangLuongSuDung findIdCbx(String ten) {
+        return nangLuongSuDungRepository.findIdCbx(ten);
+    }
+
 }

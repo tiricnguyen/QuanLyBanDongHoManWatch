@@ -19,4 +19,9 @@ public class HangDongHoServiceImpl implements HangDongHoService{
     public List<HangDongHo> getAll() {
         return hangDongHoRepository.getAll();
     }
+
+    @Override
+    public HangDongHo findIdCbx(String ten) {
+        return hangDongHoRepository.findIdCbx(ten);
+    }
 }

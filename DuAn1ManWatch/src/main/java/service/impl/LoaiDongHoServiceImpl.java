@@ -19,4 +19,9 @@ public class LoaiDongHoServiceImpl implements LoaiDongHoService {
 
     }
 
+    @Override
+    public LoaiDongHo findIdCbx(String ten) {
+        return loaiDongHoRepository.findIdCbx(ten);
+    }
+
 }

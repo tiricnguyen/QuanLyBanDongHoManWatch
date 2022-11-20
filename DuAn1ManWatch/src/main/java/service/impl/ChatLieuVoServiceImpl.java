@@ -19,5 +19,10 @@ public class ChatLieuVoServiceImpl implements ChatLieuVoService{
     public List<ChatLieuVo> getAll() {
         return chatLieuVoRepository.getAll();
     }
+
+    @Override
+    public ChatLieuVo findIdCbx(String ten) {
+        return chatLieuVoRepository.findIdCbx(ten);
+    }
     
 }

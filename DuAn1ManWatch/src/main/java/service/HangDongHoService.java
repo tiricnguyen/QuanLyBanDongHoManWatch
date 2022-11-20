@@ -7,4 +7,7 @@ import java.util.List;
 public interface HangDongHoService {
 
     List<HangDongHo> getAll();
+    
+    HangDongHo findIdCbx(String ten);
+            
 }

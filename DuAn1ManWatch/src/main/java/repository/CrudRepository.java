@@ -55,7 +55,7 @@ public abstract class CrudRepository<K, Entity, Response> {
         }
         return entity;
     }
-    
+
     public boolean saveAll(List<Entity> list) {
         try {
             session = HibernateUtil.getSession();
@@ -113,6 +113,20 @@ public abstract class CrudRepository<K, Entity, Response> {
         }
         return entity;
     }
-    
+
+    public Entity findIdCbx(String ten) {
+        Entity entity = null;
+        try {
+            session = HibernateUtil.getSession();
+            String hql = "SELECT a FROM " + className + " a WHERE a.ten = :ten";
+            Query query = session.createQuery(hql);
+            query.setParameter("ten", ten);
+            if (query.getSingleResult() != null) {
+                entity = (Entity) query.getSingleResult();
+            }
+        } catch (Exception e) {
+        }
+        return entity;
+    }
 
 }

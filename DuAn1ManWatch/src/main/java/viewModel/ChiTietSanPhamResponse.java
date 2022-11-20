@@ -45,6 +45,6 @@ public class ChiTietSanPhamResponse {
     private Integer trangThai;
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, tenDongHo, tenHang, tenLoai, chongNuoc, soLuong, giaNhap, giaBan, moTa, xuatXu};
+        return new Object[]{index, tenDongHo, tenHang, tenLoai, chongNuoc,sizeDay, soLuong, giaBan, moTa};
     }
 }

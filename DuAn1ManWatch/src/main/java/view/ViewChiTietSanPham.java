@@ -8,10 +8,18 @@
 package view;
 
 import domainModel.ChatLieuDay;
+import domainModel.ChatLieuMatKinh;
+import domainModel.ChatLieuVo;
 import domainModel.ChiTietSanPham;
+import domainModel.HangDongHo;
 import domainModel.LoaiDongHo;
+import domainModel.MatDongHo;
+import domainModel.NangLuongSuDung;
+import domainModel.SanPham;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -35,7 +43,7 @@ import service.impl.SanPhamServiceImpl;
 import viewModel.ChiTietSanPhamResponse;
 
 public class ViewChiTietSanPham extends javax.swing.JPanel {
-
+    
     private ChiTietSanPhamService ctspImpl = new ChiTietSanPhamServiceImpl();
     private LoaiDongHoService ldhImpl = new LoaiDongHoServiceImpl();
     private ChatLieuDayService cldImpl = new ChatLieuDayServiceImpl();
@@ -45,19 +53,90 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private MatDongHoService mdhImpl = new MatDongHoServiceImpl();
     private NangLuongSuDungService nlsdImpl = new NangLuongSuDungServiceImpl();
     private SanPhamServiceImpl spImpl = new SanPhamServiceImpl();
-
+    
     public ViewChiTietSanPham() {
         initComponents();
         loadTable(ctspImpl.getAllResponse());
+        loadCombox();
     }
-
+    
+    private ChiTietSanPham getFormData() {
+        ChiTietSanPham ctsp = new ChiTietSanPham();
+        
+        LoaiDongHo ldh = ldhImpl.findIdCbx(cbxLoaiDongHo.getSelectedItem().toString());
+        ctsp.setLoaiDongHo(ldh);
+        ChatLieuVo clv = clvImpl.findIdCbx(cbxVo.getSelectedItem().toString());
+        ctsp.setChatLieuVo(clv);
+        HangDongHo hdh = hdhImpl.findIdCbx(cbxHangDongHo.getSelectedItem().toString());
+        ctsp.setHangDongHo(hdh);
+        ChatLieuDay cld = cldImpl.findIdCbx(cbxDay1.getSelectedItem().toString());
+        ctsp.setChatLieuDay(cld);
+        MatDongHo mdh = mdhImpl.findIdCbx(cbxMatDongHo.getSelectedItem().toString());
+        ctsp.setMatDongHo(mdh);
+        System.out.println(mdh);
+        NangLuongSuDung nlsd = nlsdImpl.findIdCbx(cbxNangLuong.getSelectedItem().toString());
+        ctsp.setNangLuongSD(nlsd);
+        ChatLieuMatKinh clmk = clmkImpl.findIdCbx(cbxMatKinh.getSelectedItem().toString());
+        ctsp.setChatLieuMatKinh(clmk);
+        SanPham sp = spImpl.findIdCbx(cbxTenSanPham.getSelectedItem().toString());
+        ctsp.setSanPham(sp);
+        ctsp.setSizeDay(Double.parseDouble(txtSizeDay.getText().trim()));
+        ctsp.setChongNuoc(txtChongNuoc.getText().trim());
+        ctsp.setMoTa(txtMoTa.getText().trim());
+        ctsp.setSoLuong(Integer.parseInt(txtSoLuong.getText().trim()));
+        ctsp.setGiaNhap(BigDecimal.valueOf(Double.parseDouble(txtGiaNhap.getText().trim())));
+        ctsp.setGiaBan(BigDecimal.valueOf(Double.parseDouble(txtGiaBan.getText().trim())));
+        if (cbTrangThai.getFocusTraversalKeysEnabled() == true) {
+            ctsp.setTrangThai(1);
+        } else {
+            ctsp.setTrangThai(0);
+        }
+        return ctsp;
+    }
+    
     private void loadCombox() {
         
+        cbxDay1.removeAllItems();
+        for (ChatLieuDay x : cldImpl.getAll()) {
+            cbxDay1.addItem(x.getTen());
+        }
+        cbxMatKinh.removeAllItems();
+        for (ChatLieuMatKinh x : clmkImpl.getAll()) {
+            cbxMatKinh.addItem(x.getTen());
+        }
+        cbxHangDongHo.removeAllItems();
+        for (HangDongHo x : hdhImpl.getAll()) {
+            cbxHangDongHo.addItem(x.getTen());
+        }
+        
+        cbxLoaiDongHo.removeAllItems();
+        for (LoaiDongHo x : ldhImpl.getAll()) {
+            cbxLoaiDongHo.addItem(x.getTen());
+        }
+        
+        cbxMatDongHo.removeAllItems();
+        for (MatDongHo x : mdhImpl.getAll()) {
+            cbxMatDongHo.addItem(x.getKieuMat());
+        }
+        cbxNangLuong.removeAllItems();
+        for (NangLuongSuDung x : nlsdImpl.getAll()) {
+            cbxNangLuong.addItem(x.getTen());
+        }
+        cbxTenSanPham.removeAllItems();
+        for (SanPham x : spImpl.getAll()) {
+            cbxTenSanPham.addItem(x.getTen());
+        }
+        
+        cbxVo.removeAllItems();
+        for (ChatLieuVo x : clvImpl.getAll()) {
+            cbxVo.addItem(x.getTen());
+        }
+        
     }
-
+    
     private void loadTable(List<ChiTietSanPhamResponse> list) {
         DefaultTableModel model = new DefaultTableModel();
-        model.setColumnIdentifiers(new String[]{"STT", "Tên Đồng Hồ", "Tên Hãng", "Tên Loại", "Chống Nước", "Size Dây", "Số Lượng", "Giá bán", "Mô tả", "Xuất Xứ", "Trạng Thái"});
+        model.setColumnIdentifiers(new String[]{"STT", "Tên Đồng Hồ", "Tên Hãng", "Tên Loại", "Chống Nước", "Size Dây", "Số Lượng", "Giá bán", "Mô tả"});
         tblChTietSanPham.setModel(model);
         int index = 1;
         for (ChiTietSanPhamResponse x : list) {
@@ -65,7 +144,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
             index++;
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -692,7 +771,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSerialActionPerformed
 
     private void btnLoaiDongHoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoaiDongHoActionPerformed
-
+        
 
     }//GEN-LAST:event_btnLoaiDongHoActionPerformed
 
@@ -741,6 +820,10 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_cbTrangThaiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        ChiTietSanPham ctsp = getFormData();
+        ctspImpl.insert(ctsp);
+        loadTable(ctspImpl.getAllResponse());
+        JOptionPane.showMessageDialog(this, "thanh cong");
         
 
     }//GEN-LAST:event_btnThemActionPerformed

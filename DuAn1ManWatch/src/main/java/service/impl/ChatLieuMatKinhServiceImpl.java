@@ -20,10 +20,9 @@ public class ChatLieuMatKinhServiceImpl implements ChatLieuMatKinhService {
         return chatLieuMatKinhRepository.getAll();
     }
 
-    public static void main(String[] args) {
-        ChatLieuMatKinhRepository chatLieuMatKinhRepository = new ChatLieuMatKinhRepository();
-        for (ChatLieuMatKinh x : chatLieuMatKinhRepository.getAll()) {
-            System.out.println(x.toString());
-        }
+
+    @Override
+    public ChatLieuMatKinh findIdCbx(String ten) {
+        return chatLieuMatKinhRepository.findIdCbx(ten);
     }
 }

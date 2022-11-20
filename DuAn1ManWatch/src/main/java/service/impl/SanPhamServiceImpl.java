@@ -17,4 +17,9 @@ public class SanPhamServiceImpl implements SanPhamService {
     public List<SanPham> getAll() {
         return sanPhamRepository.getAll();
     }
+
+    @Override
+    public SanPham findIdCbx(String ten) {
+        return sanPhamRepository.findIdCbx(ten);
+    }
 }

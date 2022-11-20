@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ChatLieuDayService {
     List<ChatLieuDay> getAll();
+    
+    ChatLieuDay findIdCbx(String ten);
 }

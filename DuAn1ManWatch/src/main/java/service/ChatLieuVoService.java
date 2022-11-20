@@ -7,4 +7,6 @@ import java.util.List;
 public interface ChatLieuVoService {
     
     List<ChatLieuVo> getAll();
+    
+    ChatLieuVo findIdCbx(String ten);
 }
