@@ -44,10 +44,10 @@ public class NhanVien implements Serializable{
     private int gioiTinh;
     
     @Column(name = "NgaySinh")
-    private Date ngaySinh;
+    private String ngaySinh;
     
     @Column(name = "Email")   
-    private Date email;
+    private String email;
     
     @Column(name = "HinhAnh")
     private String hinhAnh;
