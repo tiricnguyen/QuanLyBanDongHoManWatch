@@ -14,60 +14,64 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 import lombok.NoArgsConstructor;
-
+import lombok.Setter;
 
 /**
  *
  * @author congh
  */
-@Entity 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Table(name = "NhanVien")
-public class NhanVien implements Serializable{
-    
+public class NhanVien implements Serializable {
+
     @Id
     @GeneratedValue
     @Column(name = "Id")
     private UUID id;
-    
+
     @Column(name = "Ma")
     private String ma;
-    
+
     @Column(name = "HoVaTen")
     private String hoVaTen;
-    
+
     @Column(name = "GioiTinh")
-    private int gioiTinh;
-    
+    private Integer gioiTinh;
+
     @Column(name = "NgaySinh")
-    private Date ngaySinh;
-    
-    @Column(name = "Email")   
-    private Date email;
-    
+    private String ngaySinh;
+
+    @Column(name = "Email")
+    private String email;
+
     @Column(name = "HinhAnh")
     private String hinhAnh;
-    
+
     @Column(name = "ChucVu")
-    private int chucVu;
-    
+    private Integer chucVu;
+
     @Column(name = "DiaChi")
     private String diaChi;
-    
+
     @Column(name = "SDT")
     private String sdt;
-    
+
     @Column(name = "MatKhau")
     private String matKhau;
-    
-    @Column(name = "TrangThai")
-    private int trangThai;
 
-    
-    
-    
+    @Column(name = "TrangThai")
+    private Integer trangThai;
+
+    @Override
+    public String toString() {
+        return "NhanVien{" + "id=" + id + ", ma=" + ma + ", hoVaTen=" + hoVaTen + ", gioiTinh=" + gioiTinh + ", ngaySinh=" + ngaySinh + ", email=" + email + ", hinhAnh=" + hinhAnh + ", chucVu=" + chucVu + ", diaChi=" + diaChi + ", sdt=" + sdt + ", matKhau=" + matKhau + ", trangThai=" + trangThai + '}';
+    }
+
 }

@@ -14,12 +14,10 @@ import java.awt.FlowLayout;
  *
  * @author Admin
  */
-public class view extends javax.swing.JFrame {
+public class ViewMain extends javax.swing.JFrame {
 
-    /**
-     * Creates new form view
-     */
-    public view() {
+ 
+    public ViewMain() {
         initComponents();
         setLocationRelativeTo(null);
 //        ViewBanHang pnl = new ViewBanHang();
@@ -51,15 +49,13 @@ public class view extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1503, 828)
-        );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
-        rSButtonHover1.setText("Bán Hàng");
         rSButtonHover1.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover1.setText("Bán Hàng");
         rSButtonHover1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,8 +63,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover2.setText("Sản Phẩm");
         rSButtonHover2.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover2.setText("Sản Phẩm");
         rSButtonHover2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,16 +72,16 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover9.setText("Hóa Đơn");
         rSButtonHover9.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover9.setText("Hóa Đơn");
         rSButtonHover9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        rSButtonHover10.setText("Voucher");
         rSButtonHover10.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover10.setText("Voucher");
         rSButtonHover10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        rSButtonHover11.setText("Khách Hàng");
         rSButtonHover11.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover11.setText("Khách Hàng");
         rSButtonHover11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +89,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover12.setText("Nhân Viên");
         rSButtonHover12.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover12.setText("Nhân Viên");
         rSButtonHover12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,8 +98,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover13.setText("Thống Kê");
         rSButtonHover13.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover13.setText("Thống Kê");
         rSButtonHover13.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         rSButtonHover13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,8 +107,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover14.setText("Đăng Xuất");
         rSButtonHover14.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover14.setText("Đăng Xuất");
         rSButtonHover14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -251,7 +247,7 @@ public class view extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
 
-        new view().setVisible(false);
+        new ViewMain().setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -265,12 +261,12 @@ public class view extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonHover11ActionPerformed
 
     private void rSButtonHover13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover13ActionPerformed
-        HangDongHo pnl = new HangDongHo();
-        pnlCards.removeAll();
-        pnlCards.add(pnl);
-        pnlCards.setLayout(new FlowLayout());
-        this.pack();
-        pnlCards.setVisible(true);
+//        HangDongHo pnl = new HangDongHo();
+//        pnlCards.removeAll();
+//        pnlCards.add(pnl);
+//        pnlCards.setLayout(new FlowLayout());
+//        this.pack();
+//        pnlCards.setVisible(true);
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
 
     /**
@@ -290,20 +286,21 @@ public class view extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new view().setVisible(true);
+                new ViewMain().setVisible(true);
             }
         });
     }

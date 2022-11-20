@@ -20,13 +20,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Table(name = "ChiTietSanPham")
 
 public class ChiTietSanPham implements Serializable {
@@ -37,19 +39,19 @@ public class ChiTietSanPham implements Serializable {
     private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdHangDongHo")
+    @JoinColumn(name = "IdHangDongHo" )
     private HangDongHo hangDongHo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdLoaiDongHo")
+    @JoinColumn(name = "IdLoaiDongHo" )
     private LoaiDongHo loaiDongHo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdNangLuongSD")
+    @JoinColumn(name = "IdNangLuongSD" )
     private NangLuongSuDung nangLuongSD;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IdSanPham")
+    @ManyToOne(fetch = FetchType.LAZY )
+    @JoinColumn(name = "IdSanPham" )
     private SanPham sanPham;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -94,4 +96,11 @@ public class ChiTietSanPham implements Serializable {
 
     @Column(name = "TrangThai")
     private Integer trangThai;
+
+    @Override
+    public String toString() {
+        return "ChiTietSanPham{" + "id=" + id + ", hangDongHo=" + hangDongHo + ", loaiDongHo=" + loaiDongHo + ", nangLuongSD=" + nangLuongSD + ", sanPham=" + sanPham + ", matDongHo=" + matDongHo + ", chatLieuDay=" + chatLieuDay + ", chatLieuVo=" + chatLieuVo + ", chatLieuMatKinh=" + chatLieuMatKinh + ", chongNuoc=" + chongNuoc + ", sizeDay=" + sizeDay + ", soLuong=" + soLuong + ", giaNhap=" + giaNhap + ", giaBan=" + giaBan + ", moTa=" + moTa + ", hinhAnh=" + hinhAnh + ", xuatXu=" + xuatXu + ", trangThai=" + trangThai + '}';
+    }
+    
+    
 }

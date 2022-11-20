@@ -24,7 +24,8 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Table(name = "ChatLieuDay")
 public class ChatLieuDay implements Serializable{
     @Id
@@ -42,7 +43,7 @@ public class ChatLieuDay implements Serializable{
     private String mauSac;
     
     @Column(name = "TrangThai")
-    private int trangThai;
+    private Integer trangThai;
 
     @Override
     public String toString() {

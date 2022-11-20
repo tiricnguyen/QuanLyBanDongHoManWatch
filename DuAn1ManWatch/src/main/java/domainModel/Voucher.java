@@ -14,7 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
@@ -23,9 +25,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Table(name = "VoucherSanPham")
-public class VoucherSanPham implements Serializable {
+public class Voucher implements Serializable {
 
     @Id
     @GeneratedValue
@@ -42,17 +45,19 @@ public class VoucherSanPham implements Serializable {
     private String phanTram;
 
     @Column(name = "NgayBatDau")
-    private Date ngayBatDau;
+    private String ngayBatDau;
 
     @Column(name = "NgayKetThuc")
-    private Date ngayKetThuc;
+    private String ngayKetThuc;
 
     @Column(name = "TrangThai")
-    private String trangThai;
+    private Integer trangThai;
 
     @Override
     public String toString() {
-        return "VoucherSanPham{" + "id=" + id + ", ma=" + ma + ", ten=" + ten + ", phanTram=" + phanTram + ", ngayBatDau=" + ngayBatDau + ", ngayKetThuc=" + ngayKetThuc + ", trangThai=" + trangThai + '}';
+        return "Voucher{" + "id=" + id + ", ma=" + ma + ", ten=" + ten + ", phanTram=" + phanTram + ", ngayBatDau=" + ngayBatDau + ", ngayKetThuc=" + ngayKetThuc + ", trangThai=" + trangThai + '}';
     }
+
+    
 
 }
