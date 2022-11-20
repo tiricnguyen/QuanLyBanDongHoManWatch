@@ -7,14 +7,17 @@ package viewModel;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author congh
  */
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChatLieuVoResponse {
@@ -23,10 +26,9 @@ public class ChatLieuVoResponse {
     private String ten;
     private String mauSac;
     private String moTa;
-    private Integer trangThai;
     
     
     public Object[] toDataRow(int index){
-        return new Object[]{index,ma,ten,mauSac,moTa,trangThai};
+        return new Object[]{index,ma,ten,mauSac,moTa};
     }
 }

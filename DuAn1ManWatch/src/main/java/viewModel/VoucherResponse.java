@@ -7,17 +7,19 @@ package viewModel;
 import java.util.Date;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author congh
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VoucherSanPhamResponse {
+public class VoucherResponse {
 
     private UUID id;
     private String ma;
@@ -25,9 +27,8 @@ public class VoucherSanPhamResponse {
     private Integer phanTram;
     private Date ngayBatDau;
     private Date ngayKetThuc;
-    private int trangThai;
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, ma, ten, phanTram, ngayBatDau, ngayKetThuc, trangThai};
+        return new Object[]{index, ma, ten, phanTram, ngayBatDau, ngayKetThuc};
     }
 }

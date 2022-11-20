@@ -13,6 +13,6 @@ package Aplication;
  */
 public class Aplication {
     public static void main(String[] args) {
-        new view.view().setVisible(true);
+        new view.ViewMain().setVisible(true);
     }
 }

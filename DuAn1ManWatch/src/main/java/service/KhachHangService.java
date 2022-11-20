@@ -20,10 +20,16 @@ public interface KhachHangService {
 
     List<KhachHangResponse> getAllResponse();
 
+    List<KhachHang> getAll();
+
+    List<KhachHangResponse> getAllByTrangThai(int trangThai);
+
+    List<KhachHangResponse> getAllByTenOrTrangThai(String ten, int trangThai);
+
     String insert(KhachHang kh);
 
     String update(KhachHang kh);
 
-    String delete(UUID id);
+    String updateTrangThai(KhachHang kh);
 
 }

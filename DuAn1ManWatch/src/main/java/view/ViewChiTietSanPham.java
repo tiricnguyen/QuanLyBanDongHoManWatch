@@ -7,17 +7,55 @@
  */
 package view;
 
+import domainModel.ChiTietSanPham;
+import domainModel.LoaiDongHo;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import service.ChiTietSanPhamService;
+import service.LoaiDongHoService;
+import service.impl.ChiTietSanPhamServiceImpl;
+import service.impl.LoaiDongHoServiceImpl;
+import viewModel.ChiTietSanPhamResponse;
+import viewModel.LoaiDongHoResponse;
+
 /**
  *
  * @author Admin
  */
 public class ViewChiTietSanPham extends javax.swing.JPanel {
 
-    /**
-     * Creates new form BanHang
-     */
+    private ChiTietSanPhamService ctspImpl = new ChiTietSanPhamServiceImpl();
+    private LoaiDongHoService ldhImpl = new LoaiDongHoServiceImpl();
+    private List<ChiTietSanPhamResponse> listCTSP = new ArrayList<>();
+    private DefaultComboBoxModel model;
+
     public ViewChiTietSanPham() {
         initComponents();
+        listCTSP = ctspImpl.getAllChiTietSanPham();
+        loadCombox(ldhImpl.getAll());
+        loadTable(listCTSP);
+    }
+
+    private void loadCombox(List<LoaiDongHo> list) {
+        model = new DefaultComboBoxModel();
+        cbxLoaiDongHo.setModel(model);
+        for (LoaiDongHo x : list) {
+            model.addElement(x);
+        }
+    }
+
+    private void loadTable(List<ChiTietSanPhamResponse> list) {
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[]{"STT", "Tên Đồng Hồ", "Tên Hãng", "Tên Loại", "Chống Nước", "Size Dây", "Số Lượng", "Giá bán", "Mô tả", "Xuất Xứ", "Trạng Thái"});
+        tblChTietSanPham.setModel(model);
+        int index = 1;
+        for (ChiTietSanPhamResponse x : list) {
+            model.addRow(x.toDataRow(index));
+            index++;
+        }
     }
 
     /**
@@ -45,7 +83,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         cbxSerial = new javax.swing.JComboBox<>();
         btnSerial = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        cbxLoaiDongHo = new javax.swing.JComboBox<>();
+        cbxLoaiDongHo = new javax.swing.JComboBox<LoaiDongHo>();
         btnLoaiDongHo = new javax.swing.JButton();
         cbxHangDongHo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
@@ -89,7 +127,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         txtTimKiemSanPhamDaXoa = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblChTietSanPham1 = new javax.swing.JTable();
+        tblChTietSanPhamDaXoa = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -130,7 +168,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         cbxTenSanPham.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnTenSanPham.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnTenSanPham.setBackground(new java.awt.Color(0, 153, 255));
 
         jLabel2.setText("Giá Nhập:");
@@ -153,7 +190,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         cbxSerial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnSerial.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnSerial.setBackground(new java.awt.Color(0, 153, 255));
         btnSerial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,9 +200,8 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel5.setText("Loại Đồng Hồ:");
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        cbxLoaiDongHo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxLoaiDongHo.setModel(new javax.swing.DefaultComboBoxModel<LoaiDongHo>());
 
-        btnLoaiDongHo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnLoaiDongHo.setBackground(new java.awt.Color(0, 153, 255));
         btnLoaiDongHo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +214,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel6.setText("Hãng Đồng Hồ:");
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnHangDongHo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnHangDongHo.setBackground(new java.awt.Color(0, 153, 255));
         btnHangDongHo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +226,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel7.setText("Chất Liệu Mặt Kính:");
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnMatKinh.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnMatKinh.setBackground(new java.awt.Color(0, 153, 255));
         btnMatKinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,7 +243,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         cbxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnDay.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnDay.setBackground(new java.awt.Color(0, 153, 255));
         btnDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +255,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel10.setText("Mặt Đồng Hồ:");
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnMatDongHo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnMatDongHo.setBackground(new java.awt.Color(0, 153, 255));
         btnMatDongHo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,7 +262,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
             }
         });
 
-        btnVo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnVo.setBackground(new java.awt.Color(0, 153, 255));
         btnVo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,7 +281,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel12.setText("Năng Lượng Sử Dụng:");
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        btnNangLuong.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
         btnNangLuong.setBackground(new java.awt.Color(0, 153, 255));
         btnNangLuong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,19 +319,19 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnThem.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_35px.png")); // NOI18N
         btnThem.setBackground(new java.awt.Color(0, 153, 255));
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
-        btnXoa.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_hide_35px.png")); // NOI18N
         btnXoa.setBackground(new java.awt.Color(0, 153, 255));
 
-        btnCapNhap.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
         btnCapNhap.setBackground(new java.awt.Color(0, 153, 255));
 
-        btnImport.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_import_30px.png")); // NOI18N
         btnImport.setBackground(new java.awt.Color(0, 153, 255));
 
-        btnExport.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_30px.png")); // NOI18N
         btnExport.setBackground(new java.awt.Color(0, 153, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -585,7 +614,6 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnCapNhapDaXoa.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\GitHub\\ManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
         btnCapNhapDaXoa.setBackground(new java.awt.Color(0, 153, 255));
 
         txtTimKiemSanPhamDaXoa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -594,7 +622,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel18.setText("Tìm Kiếm:");
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        tblChTietSanPham1.setModel(new javax.swing.table.DefaultTableModel(
+        tblChTietSanPhamDaXoa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -605,7 +633,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(tblChTietSanPham1);
+        jScrollPane4.setViewportView(tblChTietSanPhamDaXoa);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -658,7 +686,8 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSerialActionPerformed
 
     private void btnLoaiDongHoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoaiDongHoActionPerformed
-          
+
+
     }//GEN-LAST:event_btnLoaiDongHoActionPerformed
 
     private void btnHangDongHoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHangDongHoActionPerformed
@@ -705,6 +734,16 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbTrangThaiActionPerformed
 
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        ChiTietSanPham ctsp = new ChiTietSanPham();
+        LoaiDongHo ldh = (LoaiDongHo) cbxLoaiDongHo.getSelectedItem();
+        ctsp.setLoaiDongHo(ldh);
+        String check = ctspImpl.insert(ctsp);
+        JOptionPane.showMessageDialog(this, check);
+        //  list = ctspImpl.getAllChiTietSanPham();
+
+    }//GEN-LAST:event_btnThemActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ImageSanPham;
@@ -726,7 +765,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private javax.swing.JCheckBox cbTrangThai;
     private javax.swing.JComboBox<String> cbxDay;
     private javax.swing.JComboBox<String> cbxHangDongHo;
-    private javax.swing.JComboBox<String> cbxLoaiDongHo;
+    private javax.swing.JComboBox<LoaiDongHo> cbxLoaiDongHo;
     private javax.swing.JComboBox<String> cbxMatDongHo;
     private javax.swing.JComboBox<String> cbxMatKinh;
     private javax.swing.JComboBox<String> cbxNangLuong;
@@ -759,7 +798,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblChTietSanPham;
-    private javax.swing.JTable tblChTietSanPham1;
+    private javax.swing.JTable tblChTietSanPhamDaXoa;
     private javax.swing.JTextField txtChongNuoc;
     private javax.swing.JTextField txtGiaBan;
     private javax.swing.JTextField txtGiaNhap;

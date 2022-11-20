@@ -27,7 +27,8 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 
 public class Serial implements Serializable {
 
@@ -43,6 +44,11 @@ public class Serial implements Serializable {
     private ChiTietSanPham chiTietSanPham;
     
     @Column(name = "TrangThai")
-    private int trangThai;
+    private Integer trangThai;
+
+    @Override
+    public String toString() {
+        return "Serial{" + "id=" + id + ", ma=" + ma + ", chiTietSanPham=" + chiTietSanPham + ", trangThai=" + trangThai + '}';
+    }
 
 }

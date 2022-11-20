@@ -12,9 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
@@ -23,7 +23,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Table(name = "ChatLieuVo")
 public class ChatLieuVo implements Serializable {
 
@@ -45,7 +46,7 @@ public class ChatLieuVo implements Serializable {
     private String moTa;
 
     @Column(name = "TrangThai")
-    private int trangThai;
+    private Integer trangThai;
 
     @Override
     public String toString() {

@@ -88,7 +88,7 @@
                   <Group type="102" attributes="0">
                       <Component id="jPanel5" min="-2" pref="253" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jPanel7" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -647,9 +647,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnImport">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_import_30px.png"/>
-                    </Property>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
@@ -657,9 +654,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnExport">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_xls_export_30px.png"/>
-                    </Property>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
@@ -667,9 +661,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnCapNhap">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_female_user_update_35px.png"/>
-                    </Property>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
@@ -688,9 +679,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnAdd">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_add_35px.png"/>
-                    </Property>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
@@ -698,9 +686,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnAn">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_hide_35px.png"/>
-                    </Property>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="0" type="rgb"/>
                     </Property>
@@ -773,9 +758,6 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnCapNhapDaXoa">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Admin\Documents\GitHub\ManWatch\DuAn1ManWatch\src\main\java\folder\icons8_female_user_update_35px.png"/>
-                </Property>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>

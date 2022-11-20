@@ -8,13 +8,16 @@ import java.util.Date;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author congh
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class NhanVienResponse {
@@ -23,14 +26,13 @@ public class NhanVienResponse {
     private String ma;
     private String hoVaTen;
     private Integer gioiTinh;
-    private Date ngaySinh;
-    private String hinhAnh;
+    private String ngaySinh;
     private Integer chucVu;
     private String diaChi;
     private String sdt;
-    private Integer trangThai;
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, ma, hoVaTen, gioiTinh, ngaySinh, hinhAnh, chucVu, diaChi, sdt, trangThai};
+        return new Object[]{index, ma, hoVaTen, gioiTinh, ngaySinh, chucVu, diaChi, sdt};
     }
+
 }

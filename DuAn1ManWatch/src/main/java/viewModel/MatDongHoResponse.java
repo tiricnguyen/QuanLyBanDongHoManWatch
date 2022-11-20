@@ -7,13 +7,16 @@ package viewModel;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author congh
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class MatDongHoResponse {
@@ -24,9 +27,8 @@ public class MatDongHoResponse {
     private String hinhDangMat;
     private String kieuMat;
     private Float kichThuocMat;
-    private Integer trangThai;
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, ma, mauSac, hinhDangMat, kieuMat, kichThuocMat, trangThai};
+        return new Object[]{index, ma, mauSac, hinhDangMat, kieuMat, kichThuocMat};
     }
 }

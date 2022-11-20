@@ -13,8 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
@@ -23,7 +25,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Table(name = "MatDongHo")
 public class MatDongHo implements Serializable {
 
@@ -45,10 +48,10 @@ public class MatDongHo implements Serializable {
     private String kieuMat;
 
     @Column(name = "KichThuocMat")
-    private float kichThuocMat;
+    private Float kichThuocMat;
 
     @Column(name = "TrangThai")
-    private int trangThai;
+    private Integer trangThai;
 
     @Override
     public String toString() {

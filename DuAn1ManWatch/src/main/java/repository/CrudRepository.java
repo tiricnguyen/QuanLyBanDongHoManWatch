@@ -1,4 +1,4 @@
-package repository.impl;
+package repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ public abstract class CrudRepository<K, Entity, Response> {
     protected Transaction trans;
     protected String className;
     protected String res;
+    protected String ten;
 
     public List<Response> getAllResponse() {
         List<Response> list = new ArrayList<>();
@@ -22,7 +23,41 @@ public abstract class CrudRepository<K, Entity, Response> {
             Query query = session.createQuery(hql);
             list = query.getResultList();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e);
+            return null;
+        }
+        return list;
+    }
+
+    public List<Response> getAllByTrangThai(int tt) {
+        List<Response> list = new ArrayList<>();
+        try {
+            session = HibernateUtil.getSession();
+            String hql = "SELECT " + res + " FROM " + className + " a where"
+                    + " a.trangThai = :tt";
+            Query query = session.createQuery(hql);
+            query.setParameter("tt", tt);
+            list = query.getResultList();
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+        return list;
+    }
+
+    public List<Response> getAllByTenOrTrangThai(String Ten, int tt) {
+        List<Response> list = new ArrayList<>();
+        try {
+            session = HibernateUtil.getSession();
+            String hql = "SELECT " + res + " FROM " + className + " a where"
+                    + " a." + ten + " LIKE CONCAT('%',:Ten,'%') and"
+                    + " a.trangThai = :tt";
+            Query query = session.createQuery(hql);
+            query.setParameter("Ten", Ten);
+            query.setParameter("tt", tt);
+            list = query.getResultList();
+        } catch (Exception e) {
+            System.out.println(e);
             return null;
         }
         return list;
@@ -55,7 +90,7 @@ public abstract class CrudRepository<K, Entity, Response> {
         }
         return entity;
     }
-    
+
     public boolean saveAll(List<Entity> list) {
         try {
             session = HibernateUtil.getSession();
@@ -65,19 +100,6 @@ public abstract class CrudRepository<K, Entity, Response> {
             }
             trans.commit();
             session.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-    }
-
-    public boolean detele(Entity entity) {
-        try {
-            session = HibernateUtil.getSession();
-            trans = session.beginTransaction();
-            session.delete(entity);
-            trans.commit();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -113,4 +135,5 @@ public abstract class CrudRepository<K, Entity, Response> {
         }
         return entity;
     }
+
 }
