@@ -94,6 +94,11 @@ public class ViewDemo extends javax.swing.JFrame {
         kGradientPanel5.setkEndColor(new java.awt.Color(150, 203, 255));
         kGradientPanel5.setkStartColor(new java.awt.Color(150, 203, 255));
         kGradientPanel5.setOpaque(false);
+        kGradientPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kGradientPanel5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
         kGradientPanel5.setLayout(kGradientPanel5Layout);
@@ -126,6 +131,11 @@ public class ViewDemo extends javax.swing.JFrame {
         kGradientPanel7.setkEndColor(new java.awt.Color(150, 203, 255));
         kGradientPanel7.setkStartColor(new java.awt.Color(150, 203, 255));
         kGradientPanel7.setOpaque(false);
+        kGradientPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kGradientPanel7MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -338,7 +348,8 @@ public class ViewDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-        // TODO add your handling code here:
+      new BanHangView().setVisible(true);
+      
     }//GEN-LAST:event_kButton1ActionPerformed
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
@@ -346,13 +357,31 @@ public class ViewDemo extends javax.swing.JFrame {
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void btnSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSanPhamMouseClicked
-        ViewChiTietSanPhamDemp pnl = new ViewChiTietSanPhamDemp();
+        ViewChiTietSanPham pnl = new ViewChiTietSanPham();
         pnlCards.removeAll();
         pnlCards.add(pnl);
         pnlCards.setLayout(new FlowLayout());
         this.pack();
         pnlCards.setVisible(true);
     }//GEN-LAST:event_btnSanPhamMouseClicked
+
+    private void kGradientPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel5MouseClicked
+        ViewNhanVien pnl = new ViewNhanVien();
+        pnlCards.removeAll();
+        pnlCards.add(pnl);
+        pnlCards.setLayout(new FlowLayout());
+        this.pack();
+        pnlCards.setVisible(true);
+    }//GEN-LAST:event_kGradientPanel5MouseClicked
+
+    private void kGradientPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel7MouseClicked
+        ViewKhachHang pnl = new ViewKhachHang();
+        pnlCards.removeAll();
+        pnlCards.add(pnl);
+        pnlCards.setLayout(new FlowLayout());
+        this.pack();
+        pnlCards.setVisible(true);
+    }//GEN-LAST:event_kGradientPanel7MouseClicked
 
     /**
      * @param args the command line arguments
