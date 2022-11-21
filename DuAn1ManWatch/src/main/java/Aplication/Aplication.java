@@ -7,12 +7,14 @@
  */
 package Aplication;
 
+import view.ViewLogin;
+
 /**
  *
  * @author Admin
  */
 public class Aplication {
     public static void main(String[] args) {
-        new view.view().setVisible(true);
+        new ViewLogin().setVisible(true);
     }
 }

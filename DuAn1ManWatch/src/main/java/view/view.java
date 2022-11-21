@@ -19,7 +19,8 @@ public class view extends javax.swing.JFrame {
     /**
      * Creates new form view
      */
-    public view() {
+    static int cvs;
+    public view(int cv) {
         initComponents();
         setLocationRelativeTo(null);
 //        ViewBanHang pnl = new ViewBanHang();
@@ -58,8 +59,8 @@ public class view extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
-        rSButtonHover1.setText("Bán Hàng");
         rSButtonHover1.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover1.setText("Bán Hàng");
         rSButtonHover1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,8 +68,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover2.setText("Sản Phẩm");
         rSButtonHover2.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover2.setText("Sản Phẩm");
         rSButtonHover2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,16 +77,16 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover9.setText("Hóa Đơn");
         rSButtonHover9.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover9.setText("Hóa Đơn");
         rSButtonHover9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        rSButtonHover10.setText("Voucher");
         rSButtonHover10.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover10.setText("Voucher");
         rSButtonHover10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        rSButtonHover11.setText("Khách Hàng");
         rSButtonHover11.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover11.setText("Khách Hàng");
         rSButtonHover11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +94,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover12.setText("Nhân Viên");
         rSButtonHover12.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover12.setText("Nhân Viên");
         rSButtonHover12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         rSButtonHover12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,8 +103,8 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover13.setText("Thống Kê");
         rSButtonHover13.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover13.setText("Thống Kê");
         rSButtonHover13.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         rSButtonHover13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,9 +112,14 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover14.setText("Đăng Xuất");
         rSButtonHover14.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonHover14.setText("Đăng Xuất");
         rSButtonHover14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        rSButtonHover14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -152,7 +158,6 @@ public class view extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Java2\\DemoGiaoDien\\src\\folder\\icons8_close_window_30px.png")); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -205,7 +210,7 @@ public class view extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(pnlCards, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE))
+                .addComponent(pnlCards, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,7 +256,7 @@ public class view extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
 
-        new view().setVisible(false);
+        new view(cvs).setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -272,6 +277,12 @@ public class view extends javax.swing.JFrame {
         this.pack();
         pnlCards.setVisible(true);
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
+
+    private void rSButtonHover14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover14ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new ViewLogin().setVisible(true);
+    }//GEN-LAST:event_rSButtonHover14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,7 +314,7 @@ public class view extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new view().setVisible(true);
+                new view(cvs).setVisible(true);
             }
         });
     }
