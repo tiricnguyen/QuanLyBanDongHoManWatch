@@ -85,6 +85,7 @@ public abstract class CrudRepository<K, Entity, Response> {
         return true;
     }
 
+    
     public Entity findById(K id) {
         Entity entity = null;
         try {

@@ -10,6 +10,8 @@ public interface ChiTietSanPhamService {
 
     List<ChiTietSanPhamResponse> getAllResponse();
 
+    List<ChiTietSanPham> getAll();
+
     String insert(ChiTietSanPham chiTietSanPham);
 
     String update(ChiTietSanPham chiTietSanPham);

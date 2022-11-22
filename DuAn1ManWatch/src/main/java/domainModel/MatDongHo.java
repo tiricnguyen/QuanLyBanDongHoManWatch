@@ -42,7 +42,7 @@ public class MatDongHo implements Serializable {
     private String hinhDangMat;
 
     @Column(name = "KieuMat")
-    private String kieuMat;
+    private String ten;
 
     @Column(name = "KichThuocMat")
     private float kichThuocMat;
@@ -50,9 +50,6 @@ public class MatDongHo implements Serializable {
     @Column(name = "TrangThai")
     private int trangThai;
 
-    @Override
-    public String toString() {
-        return "MatDongHo{" + "id=" + id + ", ma=" + ma + ", hinhDangMat=" + hinhDangMat + ", kieuMat=" + kieuMat + ", kichThuocMat=" + kichThuocMat + ", trangThai=" + trangThai + '}';
-    }
+  
 
 }

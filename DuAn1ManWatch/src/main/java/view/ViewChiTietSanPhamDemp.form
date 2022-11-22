@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" pref="1114" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" pref="1166" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -66,7 +66,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" pref="1116" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="1141" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -86,8 +86,8 @@
                           <Component id="jLabel24" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="txtTimKiemSanPhamDaXoa1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="598" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" pref="606" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -101,7 +101,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="rojeru_san.complementos.RSTableMetro" name="tblChTietSanPham">
+                <Component class="rojeru_san.complementos.RSTableMetro" name="rSTableMetro2">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
@@ -138,8 +138,6 @@
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="grosorBordeFilas" type="int" value="0"/>
-                    <Property name="grosorBordeHead" type="int" value="0"/>
                     <Property name="rowHeight" type="int" value="25"/>
                   </Properties>
                 </Component>
@@ -237,26 +235,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="imgAnh" pref="313" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" pref="313" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="imgAnh" pref="324" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel3" pref="334" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="rojerusan.RSLabelImage" name="imgAnh">
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imgAnhMouseClicked"/>
-                  </Events>
+                <Component class="javax.swing.JLabel" name="jLabel3">
                 </Component>
               </SubComponents>
             </Container>
@@ -281,7 +275,7 @@
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="cbxVo" alignment="0" max="32767" attributes="0"/>
                                               <Component id="cbxNangLuong" alignment="1" min="-2" pref="266" max="-2" attributes="0"/>
-                                              <Component id="cbxHangDongHo" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cbxMatKinh" alignment="0" max="32767" attributes="0"/>
                                               <Component id="cbxVo1" alignment="0" pref="268" max="32767" attributes="0"/>
                                               <Component id="cbxVo2" alignment="0" max="32767" attributes="0"/>
                                           </Group>
@@ -299,14 +293,14 @@
                                       <Component id="jLabel12" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
                                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="txtGiaBan" min="-2" pref="268" max="-2" attributes="0"/>
+                                          <Component id="txtGiaNhap1" min="-2" pref="268" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jLabel11" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtChongNuoc" min="-2" pref="268" max="-2" attributes="0"/>
+                                      <Component id="txtGiaBan1" min="-2" pref="268" max="-2" attributes="0"/>
                                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -315,7 +309,7 @@
                                               <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="cbxLoaiDongHo" min="-2" pref="268" max="-2" attributes="0"/>
+                                              <Component id="cbxDay" min="-2" pref="268" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="btnMatKinh" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
@@ -346,17 +340,20 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
+                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
                                           <Component id="txtGiaNhap" min="-2" pref="268" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel2" min="-2" pref="73" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="63" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel10" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="cbxDay1" min="-2" pref="268" max="-2" attributes="0"/>
+                                          <Component id="cbxMatDongHo" min="-2" pref="268" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btnVo" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
@@ -370,26 +367,22 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel10" min="-2" pref="25" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="cbxDay1" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="btnVo" min="-2" pref="30" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="txtGiaNhap" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="cbxMatDongHo" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="btnVo" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="txtGiaNhap" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel2" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jLabel5" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -399,9 +392,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cbxLoaiDongHo" pref="30" max="32767" attributes="0"/>
+                                  <Component id="cbxDay" pref="30" max="32767" attributes="0"/>
                                   <Component id="btnMatKinh" max="32767" attributes="0"/>
-                                  <Component id="txtGiaBan" max="32767" attributes="0"/>
+                                  <Component id="txtGiaNhap1" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jLabel11" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
@@ -423,13 +416,13 @@
                                       <Component id="jLabel21" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="txtChongNuoc" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="txtGiaBan1" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="cbxHangDongHo" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="cbxMatKinh" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnHangDongHo1" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -468,7 +461,7 @@
                                       <Component id="cbxVo2" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="btnHangDongHo4" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
@@ -486,7 +479,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JComboBox" name="cbxHangDongHo">
+                <Component class="javax.swing.JComboBox" name="cbxMatKinh">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -509,7 +502,7 @@
                     <Property name="text" type="java.lang.String" value="N&#x103;ng L&#x1b0;&#x1ee3;ng S&#x1eed; D&#x1ee5;ng:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cbxLoaiDongHo">
+                <Component class="javax.swing.JComboBox" name="cbxDay">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -573,7 +566,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cbxDay1">
+                <Component class="javax.swing.JComboBox" name="cbxMatDongHo">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -725,7 +718,7 @@
                     <Property name="text" type="java.lang.String" value="Ch&#x1ed1;ng N&#x1b0;&#x1edb;c:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtChongNuoc">
+                <Component class="javax.swing.JTextField" name="txtGiaBan1">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -751,7 +744,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txtMoTa">
+                    <Component class="javax.swing.JTextArea" name="jTextArea1">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -826,7 +819,7 @@
                     <Property name="text" type="java.lang.String" value="Gi&#xe1; B&#xe1;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtGiaBan">
+                <Component class="javax.swing.JTextField" name="txtGiaNhap1">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -837,7 +830,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGiaBanActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGiaNhap1ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
@@ -852,9 +845,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton2">
                   <Properties>
@@ -1091,7 +1081,7 @@
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtTimKiemSanPhamDaXoa" min="-2" pref="362" max="-2" attributes="0"/>
-                              <EmptySpace pref="582" max="32767" attributes="0"/>
+                              <EmptySpace pref="607" max="32767" attributes="0"/>
                               <Component id="btnCapNhapDaXoa" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1191,8 +1181,6 @@
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="grosorBordeFilas" type="int" value="0"/>
-                    <Property name="grosorBordeHead" type="int" value="0"/>
                     <Property name="rowHeight" type="int" value="25"/>
                   </Properties>
                 </Component>
