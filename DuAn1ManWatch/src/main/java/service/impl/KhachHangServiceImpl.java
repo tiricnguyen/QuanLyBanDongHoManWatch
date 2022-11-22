@@ -49,6 +49,7 @@ public class KhachHangServiceImpl implements KhachHangService {
         if (khMa != null) {
             return "Mã không được trùng";
         }
+        kh.setTrangThai(1);
         kh = khRepo.saveOrUpdate(kh);
         if (kh != null) {
             return "Thêm thành công";
@@ -60,12 +61,14 @@ public class KhachHangServiceImpl implements KhachHangService {
     @Override
     public String update(KhachHang kh) {
         KhachHang khId = khRepo.findById(kh.getId());
+
         if (khId == null) {
             return "Id không tồn tại";
         }
+
         if (kh.getMa().trim().isEmpty() || kh.getHoVaTen().trim().isEmpty()
                 || kh.getDiaChi().trim().isEmpty() || kh.getSdt().trim().isEmpty()
-                || kh.getNgaySinh().toString().isEmpty()) {
+                || kh.getNgaySinh().trim().isEmpty()) {
             return "Không để trống";
         }
 
@@ -80,13 +83,27 @@ public class KhachHangServiceImpl implements KhachHangService {
         if (!kh.getSdt().startsWith("0")) {
             return "Số điện thoại bắt đầu bằng số 0";
         }
+
+        KhachHang khMa = khRepo.findByMa(kh.getMa());
+
+        if (khMa != null && khMa.getMa().equals(kh.getMa())) {
+            return "Mã không được trùng";
+        }
+        if (!kh.getMa().equals(khId.getId())) {
+            KhachHang khByMa = khRepo.findByMa(kh.getMa());
+            if (khByMa != null) {
+                return "Mã Không Trùng";
+            } else {
+                khId.setMa(kh.getMa());
+            }
+        }
+
         khId.setMa(kh.getMa());
         khId.setHoVaTen(kh.getHoVaTen());
         khId.setDiaChi(kh.getDiaChi());
         khId.setSdt(kh.getSdt());
         khId.setNgaySinh(kh.getNgaySinh());
         khId.setTrangThai(kh.getTrangThai());
-
         kh = khRepo.saveOrUpdate(khId);
         if (kh != null) {
             return "Sửa thành công";
@@ -101,38 +118,15 @@ public class KhachHangServiceImpl implements KhachHangService {
     }
 
     @Override
-    public String updateTrangThai(KhachHang kh) {
-        KhachHang khId = khRepo.findById(kh.getId());
-        if (khId == null) {
-            return "Id không tồn tại";
-        }
-        khId.setTrangThai(kh.getTrangThai());
-
-        kh = khRepo.saveOrUpdate(khId);
-        if (kh != null) {
-            return "Sửa thành công";
-        } else {
-            return "Sửa thất bại";
-        }
-    }
-
-    @Override
     public List<KhachHangResponse> getAllByTenOrTrangThai(String ten, int trangThai) {
-        return khRepo.getAllByTenOrTrangThai(ten, trangThai);
+        return khRepo.getAllByNameAndTrangThai(ten, trangThai);
     }
 
-//    public static void main(String[] args) {
-//        List<KhachHangResponse> list = new ArrayList<>();
-//        list = new KhachHangServiceImpl().getAllByTenOrTrangThai("Anh", 1);
-//        for (KhachHangResponse x : list) {
-//            System.out.println(x.getHoVaTen());
-//
-//        }
-//
-//    }
     @Override
     public List<KhachHang> getAll() {
         return khRepo.getAll();
     }
+
+  
 
 }

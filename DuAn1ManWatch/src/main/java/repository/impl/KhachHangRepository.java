@@ -20,7 +20,7 @@ public class KhachHangRepository extends CrudRepository<UUID, KhachHang, KhachHa
 
     public KhachHangRepository() {
         className = KhachHang.class.getName();
-        res = "new viewModel.KhachHangResponse(a.id,a.ma,a.hoVaTen,a.ngaySinh,a.sdt,a.diaChi,a.trangThai)";
+        res = "new viewModel.KhachHangResponse(a.id,a.ma,a.hoVaTen,a.ngaySinh,a.sdt,a.diaChi)";
         ten = "hoVaTen";
     }
 }

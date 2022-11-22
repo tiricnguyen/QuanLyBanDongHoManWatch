@@ -21,7 +21,7 @@ public class ChatLieuMatKinhRepository extends CrudRepository<UUID, ChatLieuMatK
     public ChatLieuMatKinhRepository() {
 
         className = ChatLieuMatKinh.class.getName();
-        res = "new viewModel.ChatLieuMatKinhResponse(a.id, a.ma , a.ten, a.sizeMatKinh , a.doDay , a.trangThai)";
+        res = "new viewModel.ChatLieuMatKinhResponse(a.id, a.ma , a.ten, a.sizeMatKinh , a.doDay)";
         ten = "ten";
         
     }

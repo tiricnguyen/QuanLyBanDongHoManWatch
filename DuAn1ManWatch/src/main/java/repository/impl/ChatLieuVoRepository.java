@@ -23,7 +23,7 @@ public class ChatLieuVoRepository extends CrudRepository<UUID, ChatLieuVo, ChatL
     public ChatLieuVoRepository() {
 
         className = ChatLieuVo.class.getName();
-        res = "new viewModel.ChatLieuVoResponse(a.id, a.ma , a.ten, a.mauSac , a.moTa , a.trangThai)";
+        res = "new viewModel.ChatLieuVoResponse(a.id, a.ma , a.ten, a.mauSac , a.moTa)";
         ten = "ten";
         
     }

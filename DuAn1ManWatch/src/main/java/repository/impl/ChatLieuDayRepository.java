@@ -21,7 +21,7 @@ public class ChatLieuDayRepository extends CrudRepository<UUID, ChatLieuDay, Cha
     public ChatLieuDayRepository() {
 
         className = ChatLieuDay.class.getName();
-        res = "new viewModel.ChatLieuDayRepsonse(a.id, a.ma , a.ten, a.trangThai)";
+        res = "new viewModel.ChatLieuDayRepsonse(a.id, a.ma , a.ten)";
         ten = "ten";
     }
 

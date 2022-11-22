@@ -21,7 +21,7 @@ public class SanPhamRepository extends CrudRepository<UUID, SanPham, SanPhamResp
     public SanPhamRepository() {
 
         className = SanPham.class.getName();
-        res = "new viewModel.SanPhamResponse(a.id, a.ma , a.ten, a.trangThai)";
+        res = "new viewModel.SanPhamResponse(a.id, a.ma , a.ten)";
         ten = "ten";
     }
 
