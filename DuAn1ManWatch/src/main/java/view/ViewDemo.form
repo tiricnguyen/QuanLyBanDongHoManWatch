@@ -55,7 +55,7 @@
                       <Group type="102" attributes="0">
                           <Component id="kGradientPanel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="pnlCards" pref="1166" max="32767" attributes="0"/>
+                          <Component id="pnlCards" pref="1174" max="32767" attributes="0"/>
                       </Group>
                       <Component id="kGradientPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>

@@ -348,21 +348,22 @@ public class ViewDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-      new BanHangView().setVisible(true);
+
       
     }//GEN-LAST:event_kButton1ActionPerformed
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new MainDangNhap().setVisible(true);
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void btnSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSanPhamMouseClicked
-        ViewChiTietSanPham pnl = new ViewChiTietSanPham();
-        pnlCards.removeAll();
-        pnlCards.add(pnl);
-        pnlCards.setLayout(new FlowLayout());
-        this.pack();
-        pnlCards.setVisible(true);
+//        ViewChiTietSanPham pnl = new ViewChiTietSanPham();
+//        pnlCards.removeAll();
+//        pnlCards.add(pnl);
+//        pnlCards.setLayout(new FlowLayout());
+//        this.pack();
+//        pnlCards.setVisible(true);
     }//GEN-LAST:event_btnSanPhamMouseClicked
 
     private void kGradientPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel5MouseClicked
@@ -375,12 +376,12 @@ public class ViewDemo extends javax.swing.JFrame {
     }//GEN-LAST:event_kGradientPanel5MouseClicked
 
     private void kGradientPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel7MouseClicked
-        ViewKhachHang pnl = new ViewKhachHang();
-        pnlCards.removeAll();
-        pnlCards.add(pnl);
-        pnlCards.setLayout(new FlowLayout());
-        this.pack();
-        pnlCards.setVisible(true);
+//        ViewKhachHang pnl = new ViewKhachHang();
+//        pnlCards.removeAll();
+//        pnlCards.add(pnl);
+//        pnlCards.setLayout(new FlowLayout());
+//        this.pack();
+//        pnlCards.setVisible(true);
     }//GEN-LAST:event_kGradientPanel7MouseClicked
 
     /**
