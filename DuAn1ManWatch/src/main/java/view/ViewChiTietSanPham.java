@@ -1,19 +1,6 @@
 /*                          
-                 @Override
-            public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-
-            @Override
-            public Insets getBorderInsets(Component c) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-
-            @Override
-            public boolean isBorderOpaque() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-        }                      +====================+
+               
+                            +====================+
                             |                    |
                             |     TIRICNGUYEN    |
                             |                    |
@@ -23,6 +10,7 @@ package view;
 
 import domainModel.ChiTietSanPham;
 import domainModel.LoaiDongHo;
+import domainModel.SanPham;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
@@ -33,7 +21,6 @@ import service.LoaiDongHoService;
 import service.impl.ChiTietSanPhamServiceImpl;
 import service.impl.LoaiDongHoServiceImpl;
 import viewModel.ChiTietSanPhamResponse;
-import viewModel.LoaiDongHoResponse;
 
 /**
  *
@@ -41,36 +28,36 @@ import viewModel.LoaiDongHoResponse;
  */
 public class ViewChiTietSanPham extends javax.swing.JPanel {
 
-//    private ChiTietSanPhamService ctspImpl = new ChiTietSanPhamServiceImpl();
-//    private LoaiDongHoService ldhImpl = new LoaiDongHoServiceImpl();
-//    private List<ChiTietSanPhamResponse> listCTSP = new ArrayList<>();
-//    private DefaultComboBoxModel model;
+    private ChiTietSanPhamService ctspImpl = new ChiTietSanPhamServiceImpl();
+    private LoaiDongHoService ldhImpl = new LoaiDongHoServiceImpl();
+    private List<ChiTietSanPhamResponse> listCTSP = new ArrayList<>();
+    private DefaultComboBoxModel model;
 
     public ViewChiTietSanPham() {
         initComponents();
-//        listCTSP = ctspImpl.getAllChiTietSanPham();
-//        loadCombox(ldhImpl.getAll());
-        //loadTable(listCTSP);
+        listCTSP = ctspImpl.getAllChiTietSanPham();
+        loadCombox();
+        loadTable(listCTSP);
     }
 
-//    private void loadCombox(List<LoaiDongHo> list) {
-//        model = new DefaultComboBoxModel();
-//        cbxLoaiDongHo.setModel(model);
-//        for (LoaiDongHo x : list) {
-//            model.addElement(x);
-//        }
-//    }
+    private void loadCombox() {
+        model = new DefaultComboBoxModel();
+        cbxLoaiDongHo.setModel(model);
+        for (LoaiDongHo x : ldhImpl.getAll()) {
+            model.addElement(x);
+        }
+    }
 
-//    private void loadTable(List<ChiTietSanPhamResponse> list) {
-//        DefaultTableModel model = new DefaultTableModel();
-//        model.setColumnIdentifiers(new String[]{"STT", "Tên Đồng Hồ", "Tên Hãng", "Tên Loại", "Chống Nước", "Size Dây", "Số Lượng", "Giá bán", "Mô tả", "Xuất Xứ", "Trạng Thái"});
-//        tblChTietSanPham.setModel(model);
-//        int index = 1;
-//        for (ChiTietSanPhamResponse x : list) {
-//            model.addRow(x.toDataRow(index));
-//            index++;
-//        }
-//    }
+    private void loadTable(List<ChiTietSanPhamResponse> list) {
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[]{"STT", "Tên Đồng Hồ", "Tên Hãng", "Tên Loại", "Chống Nước", "Size Dây", "Số Lượng", "Giá bán", "Mô tả", "Xuất Xứ", "Trạng Thái"});
+        tblChTietSanPham.setModel(model);
+        int index = 1;
+        for (ChiTietSanPhamResponse x : list) {
+            model.addRow(x.toDataRow(index));
+            index++;
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,7 +71,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        rSTableMetro2 = new rojeru_san.complementos.RSTableMetro();
+        tblChTietSanPham = new rojeru_san.complementos.RSTableMetro();
         txtTimKiemSanPhamDaXoa1 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -93,7 +80,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         cbxMatKinh = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        cbxDay = new javax.swing.JComboBox<>();
+        cbxLoaiDongHo = new javax.swing.JComboBox<LoaiDongHo>();
         btnHangDongHo = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -131,7 +118,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        cbxTenSanPham = new javax.swing.JComboBox<>();
+        cbxTenSanPham = new javax.swing.JComboBox<SanPham>();
         jLabel4 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -157,32 +144,34 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
 
-        rSTableMetro2.setModel(new javax.swing.table.DefaultTableModel(
+        tblChTietSanPham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        rSTableMetro2.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
-        rSTableMetro2.setColorBordeFilas(new java.awt.Color(0, 153, 255));
-        rSTableMetro2.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setColorSelBackgound(new java.awt.Color(51, 204, 255));
-        rSTableMetro2.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro2.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro2.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rSTableMetro2.setGridColor(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setGrosorBordeFilas(0);
-        rSTableMetro2.setGrosorBordeHead(0);
-        rSTableMetro2.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        rSTableMetro2.setRowHeight(25);
-        jScrollPane3.setViewportView(rSTableMetro2);
+        tblChTietSanPham.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
+        tblChTietSanPham.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblChTietSanPham.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblChTietSanPham.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblChTietSanPham.setColorSelBackgound(new java.awt.Color(51, 204, 255));
+        tblChTietSanPham.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblChTietSanPham.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblChTietSanPham.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblChTietSanPham.setGridColor(new java.awt.Color(255, 255, 255));
+        tblChTietSanPham.setGrosorBordeFilas(0);
+        tblChTietSanPham.setGrosorBordeHead(0);
+        tblChTietSanPham.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblChTietSanPham.setRowHeight(25);
+        jScrollPane3.setViewportView(tblChTietSanPham);
 
         txtTimKiemSanPhamDaXoa1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTimKiemSanPhamDaXoa1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 153, 255)));
@@ -250,7 +239,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Năng Lượng Sử Dụng:");
 
-        cbxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxLoaiDongHo.setModel(new javax.swing.DefaultComboBoxModel<LoaiDongHo>());
 
         btnHangDongHo.setBackground(new java.awt.Color(0, 153, 255));
         btnHangDongHo.addActionListener(new java.awt.event.ActionListener() {
@@ -376,8 +365,18 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         jLabel11.setText("VNĐ");
 
         jButton1.setText("Thêm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cập Nhập");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Xóa");
 
@@ -414,7 +413,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
                                 .addComponent(txtGiaNhap1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtGiaBan1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel20)
@@ -424,7 +423,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(232, 232, 232))
                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(cbxDay, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbxLoaiDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(btnMatKinh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1)
@@ -451,7 +450,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5))
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -485,7 +484,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cbxDay, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addComponent(cbxLoaiDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                         .addComponent(btnMatKinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtGiaNhap1))
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -551,7 +550,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        cbxTenSanPham.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxTenSanPham.setModel(new javax.swing.DefaultComboBoxModel<SanPham>());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Serial:");
@@ -708,6 +707,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         rSTableMetro3.setColorBordeHead(new java.awt.Color(255, 255, 255));
         rSTableMetro3.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
         rSTableMetro3.setColorSelBackgound(new java.awt.Color(51, 204, 255));
+        rSTableMetro3.setEnabled(false);
         rSTableMetro3.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         rSTableMetro3.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         rSTableMetro3.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -754,7 +754,7 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1141, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -819,6 +819,26 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaNhap1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ChiTietSanPham ctsp = new ChiTietSanPham();
+        LoaiDongHo ldh = (LoaiDongHo) cbxLoaiDongHo.getSelectedItem();
+        ctsp.setLoaiDongHo(ldh);
+        System.out.println(ldh);
+        String check = ctspImpl.insert(ctsp);
+        loadTable(ctspImpl.getAllChiTietSanPham());
+        System.out.println(ctspImpl.getAllChiTietSanPham());
+        JOptionPane.showMessageDialog(this, check);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel4MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ImageSanPham;
@@ -832,12 +852,12 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private javax.swing.JButton btnSerial;
     private javax.swing.JButton btnTenSanPham;
     private javax.swing.JButton btnVo;
-    private javax.swing.JComboBox<String> cbxDay;
+    private javax.swing.JComboBox<LoaiDongHo> cbxLoaiDongHo;
     private javax.swing.JComboBox<String> cbxMatDongHo;
     private javax.swing.JComboBox<String> cbxMatKinh;
     private javax.swing.JComboBox<String> cbxNangLuong;
     private javax.swing.JComboBox<String> cbxSerial;
-    private javax.swing.JComboBox<String> cbxTenSanPham;
+    private javax.swing.JComboBox<SanPham> cbxTenSanPham;
     private javax.swing.JComboBox<String> cbxVo;
     private javax.swing.JComboBox<String> cbxVo1;
     private javax.swing.JComboBox<String> cbxVo2;
@@ -877,8 +897,8 @@ public class ViewChiTietSanPham extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private rojerusan.RSLabelImage rSLabelImage1;
-    private rojeru_san.complementos.RSTableMetro rSTableMetro2;
     private rojeru_san.complementos.RSTableMetro rSTableMetro3;
+    private rojeru_san.complementos.RSTableMetro tblChTietSanPham;
     private javax.swing.JTextField txtGiaBan1;
     private javax.swing.JTextField txtGiaBan2;
     private javax.swing.JTextField txtGiaNhap;

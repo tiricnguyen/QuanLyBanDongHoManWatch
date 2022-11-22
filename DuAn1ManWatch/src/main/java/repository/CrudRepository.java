@@ -29,35 +29,34 @@ public abstract class CrudRepository<K, Entity, Response> {
         return list;
     }
 
-    public List<Response> getAllByTrangThai(int tt) {
+    public List<Response> getAllByTrangThai(int trangThai) {
         List<Response> list = new ArrayList<>();
         try {
             session = HibernateUtil.getSession();
-            String hql = "SELECT " + res + " FROM " + className + " a where"
-                    + " a.trangThai = :tt";
+            String hql = "SELECT " + res + " From " + className + "  a Where a.trangThai =: trangThai";
             Query query = session.createQuery(hql);
-            query.setParameter("tt", tt);
+            query.setParameter("trangThai", trangThai);
             list = query.getResultList();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace(System.out);
             return null;
         }
         return list;
     }
 
-    public List<Response> getAllByTenOrTrangThai(String Ten, int tt) {
+    public List<Response> getAllByNameAndTrangThai(String ten, int tt) {
         List<Response> list = new ArrayList<>();
         try {
             session = HibernateUtil.getSession();
-            String hql = "SELECT " + res + " FROM " + className + " a where"
-                    + " a." + ten + " LIKE CONCAT('%',:Ten,'%') and"
-                    + " a.trangThai = :tt";
+            String hql = "SELECT " + res
+                    + " From " + className + " a Where a.hoVaTen like CONCAT('%', :ten,'%')"
+                    + " and a.trangThai = :tt";
             Query query = session.createQuery(hql);
-            query.setParameter("Ten", Ten);
+            query.setParameter("ten", ten);
             query.setParameter("tt", tt);
             list = query.getResultList();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace(System.out);
             return null;
         }
         return list;
@@ -89,6 +88,23 @@ public abstract class CrudRepository<K, Entity, Response> {
             return null;
         }
         return entity;
+    }
+
+    public Entity findByGmailAndMK(String Gmail, String MK) {
+        Entity entitys = null;
+        try {
+            session = HibernateUtil.getSession();
+            String hql = "SELECT a FROM " + className + " a WHERE email =: email and matKhau =: matKhau";
+            Query query = session.createQuery(hql);
+            query.setParameter("gmail", Gmail);
+            query.setParameter("matKhau", MK);
+            entitys = (Entity) query.getSingleResult();
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+        return entitys;
     }
 
     public boolean saveAll(List<Entity> list) {

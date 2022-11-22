@@ -21,7 +21,7 @@ public class NangLuongSuDungRepository extends CrudRepository<UUID, NangLuongSuD
     public NangLuongSuDungRepository() {
 
         className = NangLuongSuDung.class.getName();
-        res = "new viewModel.NangLuongSuDungResponse(a.id, a.ma , a.ten, a.trangThai)";
+        res = "new viewModel.NangLuongSuDungResponse(a.id, a.ma , a.ten)";
         ten = "ten";
     }
 

@@ -89,17 +89,6 @@ public class ViewNhanVien extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Nhân Viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
-        rSTableMetro2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         rSTableMetro2.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
         rSTableMetro2.setColorBordeFilas(new java.awt.Color(0, 153, 255));
         rSTableMetro2.setColorBordeHead(new java.awt.Color(255, 255, 255));
@@ -442,7 +431,15 @@ public class ViewNhanVien extends javax.swing.JPanel {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         rSTableMetro3.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
         rSTableMetro3.setColorBordeFilas(new java.awt.Color(0, 153, 255));
         rSTableMetro3.setColorBordeHead(new java.awt.Color(255, 255, 255));
@@ -455,6 +452,11 @@ public class ViewNhanVien extends javax.swing.JPanel {
         rSTableMetro3.setIntercellSpacing(new java.awt.Dimension(0, 0));
         rSTableMetro3.setRowHeight(25);
         jScrollPane4.setViewportView(rSTableMetro3);
+        if (rSTableMetro3.getColumnModel().getColumnCount() > 0) {
+            rSTableMetro3.getColumnModel().getColumn(0).setResizable(false);
+            rSTableMetro3.getColumnModel().getColumn(1).setResizable(false);
+            rSTableMetro3.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);

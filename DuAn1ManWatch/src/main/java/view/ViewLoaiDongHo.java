@@ -58,11 +58,11 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
         txtTimKiem = new javax.swing.JTextField();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tblLoaiDongHo = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblKhachHang5 = new rojeru_san.complementos.RSTableMetro();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblChatLieuDay = new javax.swing.JTable();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblLoaiDongHo = new rojeru_san.complementos.RSTableMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -128,35 +128,35 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnThêm.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
-        btnThêm.setText("Thêm");
         btnThêm.setBackground(new java.awt.Color(0, 153, 255));
         btnThêm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThêm.setForeground(new java.awt.Color(255, 255, 255));
+        btnThêm.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_add_30px_1.png")); // NOI18N
+        btnThêm.setText("Thêm");
 
-        btnCapNhap.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
-        btnCapNhap.setText("Cập Nhập");
         btnCapNhap.setBackground(new java.awt.Color(0, 153, 255));
         btnCapNhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCapNhap.setForeground(new java.awt.Color(255, 255, 255));
+        btnCapNhap.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
+        btnCapNhap.setText("Cập Nhập");
 
-        btnAn.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_hide_30px.png")); // NOI18N
-        btnAn.setText("Ẩn");
         btnAn.setBackground(new java.awt.Color(0, 153, 255));
         btnAn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAn.setForeground(new java.awt.Color(255, 255, 255));
+        btnAn.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_hide_30px.png")); // NOI18N
+        btnAn.setText("Ẩn");
 
-        btnNhapExcel.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_import_30px.png")); // NOI18N
-        btnNhapExcel.setText("Nhập");
         btnNhapExcel.setBackground(new java.awt.Color(0, 153, 255));
         btnNhapExcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnNhapExcel.setForeground(new java.awt.Color(255, 255, 255));
+        btnNhapExcel.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_import_30px.png")); // NOI18N
+        btnNhapExcel.setText("Nhập");
 
-        btnXuatExcel.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_30px.png")); // NOI18N
-        btnXuatExcel.setText("Xuất");
         btnXuatExcel.setBackground(new java.awt.Color(0, 153, 255));
         btnXuatExcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnXuatExcel.setForeground(new java.awt.Color(255, 255, 255));
+        btnXuatExcel.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_30px.png")); // NOI18N
+        btnXuatExcel.setText("Xuất");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -201,6 +201,60 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Loại Đồng Hồ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12)))); // NOI18N
 
+        tblKhachHang5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblKhachHang5.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
+        tblKhachHang5.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblKhachHang5.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblKhachHang5.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblKhachHang5.setColorSelBackgound(new java.awt.Color(255, 51, 51));
+        tblKhachHang5.setFocusCycleRoot(true);
+        tblKhachHang5.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblKhachHang5.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblKhachHang5.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblKhachHang5.setGridColor(new java.awt.Color(255, 255, 255));
+        tblKhachHang5.setGrosorBordeFilas(0);
+        tblKhachHang5.setGrosorBordeHead(0);
+        tblKhachHang5.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblKhachHang5.setRowHeight(25);
+        tblKhachHang5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKhachHang5MouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(tblKhachHang5);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane3.addTab("Sử Dụng", jPanel7);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Loại Đồng Hồ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12)))); // NOI18N
+
         tblLoaiDongHo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -212,42 +266,26 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(tblLoaiDongHo);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane3.addTab("Sử Dụng", jPanel7);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Loại Đồng Hồ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12)))); // NOI18N
-
-        tblChatLieuDay.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        tblLoaiDongHo.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
+        tblLoaiDongHo.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblLoaiDongHo.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblLoaiDongHo.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblLoaiDongHo.setColorSelBackgound(new java.awt.Color(255, 51, 51));
+        tblLoaiDongHo.setFocusCycleRoot(true);
+        tblLoaiDongHo.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblLoaiDongHo.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblLoaiDongHo.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblLoaiDongHo.setGridColor(new java.awt.Color(255, 255, 255));
+        tblLoaiDongHo.setGrosorBordeFilas(0);
+        tblLoaiDongHo.setGrosorBordeHead(0);
+        tblLoaiDongHo.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblLoaiDongHo.setRowHeight(25);
+        tblLoaiDongHo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblLoaiDongHoMouseClicked(evt);
             }
-        ));
-        jScrollPane1.setViewportView(tblChatLieuDay);
+        });
+        jScrollPane9.setViewportView(tblLoaiDongHo);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -255,14 +293,14 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -312,6 +350,14 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblKhachHang5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHang5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblKhachHang5MouseClicked
+
+    private void tblLoaiDongHoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLoaiDongHoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblLoaiDongHoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -365,11 +411,11 @@ public class ViewLoaiDongHo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable tblChatLieuDay;
-    private javax.swing.JTable tblLoaiDongHo;
+    private rojeru_san.complementos.RSTableMetro tblKhachHang5;
+    private rojeru_san.complementos.RSTableMetro tblLoaiDongHo;
     private javax.swing.JTextField txtMa;
     private javax.swing.JTextField txtTen;
     private javax.swing.JTextField txtTimKiem;

@@ -115,6 +115,11 @@ public class ViewDemo extends javax.swing.JFrame {
         kGradientPanel6.setkEndColor(new java.awt.Color(150, 203, 255));
         kGradientPanel6.setkStartColor(new java.awt.Color(150, 203, 255));
         kGradientPanel6.setOpaque(false);
+        kGradientPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kGradientPanel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel6Layout = new javax.swing.GroupLayout(kGradientPanel6);
         kGradientPanel6.setLayout(kGradientPanel6Layout);
@@ -348,8 +353,8 @@ public class ViewDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-      new BanHangView().setVisible(true);
-      
+        new BanHangView().setVisible(true);
+
     }//GEN-LAST:event_kButton1ActionPerformed
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
@@ -382,6 +387,15 @@ public class ViewDemo extends javax.swing.JFrame {
         this.pack();
         pnlCards.setVisible(true);
     }//GEN-LAST:event_kGradientPanel7MouseClicked
+
+    private void kGradientPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel6MouseClicked
+        ViewHoaDon pnl = new ViewHoaDon();
+        pnlCards.removeAll();
+        pnlCards.add(pnl);
+        pnlCards.setLayout(new FlowLayout());
+        this.pack();
+        pnlCards.setVisible(true);
+    }//GEN-LAST:event_kGradientPanel6MouseClicked
 
     /**
      * @param args the command line arguments

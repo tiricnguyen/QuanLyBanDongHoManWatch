@@ -29,7 +29,5 @@ public interface KhachHangService {
     String insert(KhachHang kh);
 
     String update(KhachHang kh);
-
-    String updateTrangThai(KhachHang kh);
-
+    
 }

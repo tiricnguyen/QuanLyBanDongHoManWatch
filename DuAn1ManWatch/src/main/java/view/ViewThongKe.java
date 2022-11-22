@@ -26,10 +26,10 @@ import viewModel.LoaiDongHoResponse;
  *
  * @author Admin
  */
-public class ViewHoaDon extends javax.swing.JPanel {
+public class ViewThongKe extends javax.swing.JPanel {
 
 
-    public ViewHoaDon() {
+    public ViewThongKe() {
         initComponents();
 
     }
