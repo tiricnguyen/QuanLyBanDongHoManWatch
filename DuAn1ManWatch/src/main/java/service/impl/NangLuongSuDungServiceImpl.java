@@ -13,10 +13,7 @@ import repository.impl.NangLuongSuDungRepository;
 import service.NangLuongSuDungService;
 import viewModel.NangLuongSuDungResponse;
 
-/**
- *
- * @author Admin
- */
+
 public class NangLuongSuDungServiceImpl implements NangLuongSuDungService {
 
     NangLuongSuDungRepository nlsdRepo = new NangLuongSuDungRepository();

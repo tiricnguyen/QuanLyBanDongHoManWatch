@@ -8,6 +8,12 @@
 package view;
 
 import java.awt.FlowLayout;
+<<<<<<< Updated upstream
+=======
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.geom.RoundRectangle2D;
+>>>>>>> Stashed changes
 
 /**
  *
@@ -20,8 +26,29 @@ public class MainDangNhap extends javax.swing.JFrame {
      */
     public MainDangNhap() {
         initComponents();
+<<<<<<< Updated upstream
         setLocationRelativeTo(null);
         
+=======
+        prepareUI();
+        //setUndecorated(true);
+        setLocationRelativeTo(null);
+
+    }
+
+    void prepareUI() {
+        // location, size, ...
+        setLocationRelativeTo(null);
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 25, 25));
+
+            }
+        });
+        // clock
+
+>>>>>>> Stashed changes
     }
 
     /**
@@ -45,8 +72,16 @@ public class MainDangNhap extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+<<<<<<< Updated upstream
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+=======
+        jLabel5 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+>>>>>>> Stashed changes
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -111,10 +146,23 @@ public class MainDangNhap extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Mật Khẩu:");
 
+<<<<<<< Updated upstream
+=======
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("X");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+
+>>>>>>> Stashed changes
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(57, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,11 +178,38 @@ public class MainDangNhap extends javax.swing.JFrame {
                         .addComponent(jCheckBox1)
                         .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(55, 55, 55))
+=======
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(99, 99, 99)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField1)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField2)
+                                .addComponent(jCheckBox1)
+                                .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addContainerGap())))
+>>>>>>> Stashed changes
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addGap(86, 86, 86)
+=======
+                .addComponent(jLabel5)
+                .addGap(57, 57, 57)
+>>>>>>> Stashed changes
                 .addComponent(jLabel1)
                 .addGap(45, 45, 45)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,6 +266,14 @@ public class MainDangNhap extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
+<<<<<<< Updated upstream
+=======
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        System.exit(0);
+        dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -235,6 +318,10 @@ public class MainDangNhap extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+<<<<<<< Updated upstream
+=======
+    private javax.swing.JLabel jLabel5;
+>>>>>>> Stashed changes
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

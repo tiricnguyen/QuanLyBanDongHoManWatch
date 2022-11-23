@@ -9,7 +9,6 @@ package service;
 
 import domainModel.KhachHang;
 import java.util.List;
-import java.util.UUID;
 import viewModel.KhachHangResponse;
 
 /**
@@ -29,5 +28,9 @@ public interface KhachHangService {
     String insert(KhachHang kh);
 
     String update(KhachHang kh);
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
 }

@@ -281,9 +281,14 @@ public class ViewKhachHang extends javax.swing.JPanel {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnImport, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+<<<<<<< Updated upstream
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(btnSua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnThem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
+=======
+                            .addComponent(btnSua, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
+>>>>>>> Stashed changes
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnXoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -324,7 +329,11 @@ public class ViewKhachHang extends javax.swing.JPanel {
                     .addComponent(btnXoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnImport, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< Updated upstream
                 .addContainerGap(25, Short.MAX_VALUE))
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -407,6 +416,14 @@ public class ViewKhachHang extends javax.swing.JPanel {
         tblKhachHangDaXoa.setGrosorBordeHead(0);
         tblKhachHangDaXoa.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblKhachHangDaXoa.setRowHeight(25);
+<<<<<<< Updated upstream
+=======
+        tblKhachHangDaXoa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKhachHangDaXoaMouseClicked(evt);
+            }
+        });
+>>>>>>> Stashed changes
         jScrollPane4.setViewportView(tblKhachHangDaXoa);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -473,7 +490,11 @@ public class ViewKhachHang extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
+=======
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+>>>>>>> Stashed changes
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -490,9 +511,15 @@ public class ViewKhachHang extends javax.swing.JPanel {
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
 
+<<<<<<< Updated upstream
         KhachHang kh = new KhachHang();
         kh.setId(listKh.get(tblKhachHang.getSelectedRow()).getId());
         String check = khImpl.update(getFormData());
+=======
+        KhachHang kh = getFormData();
+        kh.setId(listKh.get(tblKhachHang.getSelectedRow()).getId());
+        String check = khImpl.update(kh);
+>>>>>>> Stashed changes
         JOptionPane.showMessageDialog(this, check);
 
         listKh = khImpl.getAllByTrangThai(1);
@@ -505,6 +532,7 @@ public class ViewKhachHang extends javax.swing.JPanel {
     private void btnCapNhapKhachHangQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhapKhachHangQuayLaiActionPerformed
 
          try {
+<<<<<<< Updated upstream
             KhachHang kh = new KhachHang();
             kh.setId(listKhDaXoa.get(tblKhachHangDaXoa.getSelectedRow()).getId());
             kh.setMa(listKhDaXoa.get(tblKhachHangDaXoa.getSelectedRow()).getMa());
@@ -512,6 +540,10 @@ public class ViewKhachHang extends javax.swing.JPanel {
             kh.setNgaySinh(listKhDaXoa.get(tblKhachHangDaXoa.getSelectedRow()).getNgaySinh());
             kh.setDiaChi(listKhDaXoa.get(tblKhachHangDaXoa.getSelectedRow()).getDiaChi());
             kh.setSdt(listKhDaXoa.get(tblKhachHangDaXoa.getSelectedRow()).getSdt());
+=======
+            KhachHang kh = getFormData();
+            kh.setId(listKhDaXoa.get(tblKhachHangDaXoa.getSelectedRow()).getId());
+>>>>>>> Stashed changes
             kh.setTrangThai(1);
             String check = khImpl.update(kh);
             JOptionPane.showMessageDialog(this, check);
@@ -534,6 +566,7 @@ public class ViewKhachHang extends javax.swing.JPanel {
 
     private void tblKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseClicked
         int i = tblKhachHang.getSelectedRow();
+<<<<<<< Updated upstream
         txtMa.setText(khImpl.getAll().get(i).getMa());
         txtHoTen.setText(khImpl.getAll().get(i).getHoVaTen());
         txtDiaChi.setText(khImpl.getAll().get(i).getDiaChi());
@@ -542,15 +575,28 @@ public class ViewKhachHang extends javax.swing.JPanel {
 
     }//GEN-LAST:event_tblKhachHangMouseClicked
 
+=======
+        txtMa.setText(listKh.get(i).getMa());
+        txtHoTen.setText(listKh.get(i).getHoVaTen());
+        txtDiaChi.setText(listKh.get(i).getDiaChi());
+        txtNgaySinh.setDate(LocalDate.parse(listKh.get(i).getNgaySinh()));
+        txtSdt.setText(listKh.get(i).getSdt());
+
+    }//GEN-LAST:event_tblKhachHangMouseClicked
+
+>>>>>>> Stashed changes
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
          try {
             KhachHang kh = new KhachHang();
             kh.setId(listKh.get(tblKhachHang.getSelectedRow()).getId());
+<<<<<<< Updated upstream
             kh.setMa(listKh.get(tblKhachHang.getSelectedRow()).getMa());
             kh.setHoVaTen(listKh.get(tblKhachHang.getSelectedRow()).getHoVaTen());
             kh.setNgaySinh(listKh.get(tblKhachHang.getSelectedRow()).getNgaySinh());
             kh.setDiaChi(listKh.get(tblKhachHang.getSelectedRow()).getDiaChi());
             kh.setSdt(listKh.get(tblKhachHang.getSelectedRow()).getSdt());
+=======
+>>>>>>> Stashed changes
             kh.setTrangThai(0);
             String check = khImpl.update(kh);
             JOptionPane.showMessageDialog(this, check);
@@ -573,6 +619,13 @@ public class ViewKhachHang extends javax.swing.JPanel {
         String tenKh = txtTimKiem.getText();
         loadTableDaXoa(khImpl.getAllByTenOrTrangThai(tenKh, 0));
     }//GEN-LAST:event_txtKhachHangDaXoaKeyReleased
+<<<<<<< Updated upstream
+=======
+
+    private void tblKhachHangDaXoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangDaXoaMouseClicked
+   
+    }//GEN-LAST:event_tblKhachHangDaXoaMouseClicked
+>>>>>>> Stashed changes
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

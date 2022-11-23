@@ -10,6 +10,11 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
+<<<<<<< Updated upstream
+=======
+    <Property name="locationByPlatform" type="boolean" value="true"/>
+    <Property name="undecorated" type="boolean" value="true"/>
+>>>>>>> Stashed changes
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -30,26 +35,51 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
           <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+=======
+          <Component id="kGradientPanel2" alignment="0" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
           <Component id="jPanel2" max="32767" attributes="0"/>
+=======
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="kGradientPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+>>>>>>> Stashed changes
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+<<<<<<< Updated upstream
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+=======
+    <Container class="com.k33ptoo.components.KGradientPanel" name="kGradientPanel2">
+      <Properties>
+        <Property name="kBorderRadius" type="int" value="35"/>
+        <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="opaque" type="boolean" value="false"/>
+>>>>>>> Stashed changes
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
               <Component id="jPanel4" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -60,11 +90,30 @@
                   <Component id="jScrollPane5" min="-2" pref="130" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
+=======
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="kGradientPanel3" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel9" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="jScrollPane5" min="-2" pref="130" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+>>>>>>> Stashed changes
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< Updated upstream
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -73,33 +122,73 @@
                       <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+=======
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="kGradientPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="732" max="32767" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel9" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTabbedPane1" alignment="0" pref="702" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  </Group>
+>>>>>>> Stashed changes
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
+<<<<<<< Updated upstream
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="ae" red="27" type="rgb"/>
             </Property>
+=======
+        <Container class="com.k33ptoo.components.KGradientPanel" name="kGradientPanel3">
+          <Properties>
+            <Property name="kBorderRadius" type="int" value="40"/>
+            <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="0" type="rgb"/>
+            </Property>
+            <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="0" type="rgb"/>
+            </Property>
+            <Property name="opaque" type="boolean" value="false"/>
+>>>>>>> Stashed changes
           </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+<<<<<<< Updated upstream
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="kGradientPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="rSButtonHover5" min="-2" pref="538" max="-2" attributes="0"/>
                       <EmptySpace pref="398" max="32767" attributes="0"/>
                       <Component id="rSButtonHover2" min="-2" pref="142" max="-2" attributes="0"/>
+=======
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="kGradientPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="rSButtonHover5" min="-2" pref="474" max="-2" attributes="0"/>
+                      <EmptySpace pref="353" max="32767" attributes="0"/>
+                      <Component id="rSButtonHover2" min="-2" pref="142" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+>>>>>>> Stashed changes
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="kGradientPanel1" min="-2" max="-2" attributes="0"/>
@@ -107,10 +196,20 @@
                   </Group>
                   <Component id="rSButtonHover5" alignment="0" max="32767" attributes="0"/>
                   <Component id="rSButtonHover2" alignment="0" max="32767" attributes="0"/>
+=======
+                  <Component id="rSButtonHover2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="rSButtonHover5" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="kGradientPanel1" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+>>>>>>> Stashed changes
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
+<<<<<<< Updated upstream
             <Component class="rojerusan.RSButtonHover" name="rSButtonHover5">
               <Properties>
                 <Property name="text" type="java.lang.String" value="T&#x1ea1;o H&#xf3;a &#x110;&#x1a1;n"/>
@@ -125,6 +224,28 @@
             <Container class="com.k33ptoo.components.KGradientPanel" name="kGradientPanel1">
               <Properties>
                 <Property name="kBorderRadius" type="int" value="35"/>
+=======
+            <Component class="rojerusan.RSButtonHover" name="rSButtonHover2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonHover2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="com.k33ptoo.components.KGradientPanel" name="kGradientPanel1">
+              <Properties>
+                <Property name="kBorderRadius" type="int" value="55"/>
+>>>>>>> Stashed changes
                 <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -138,8 +259,13 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+<<<<<<< Updated upstream
                           <EmptySpace pref="34" max="32767" attributes="0"/>
                           <Component id="jTextField1" min="-2" pref="319" max="-2" attributes="0"/>
+=======
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jTextField1" pref="395" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -148,6 +274,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
@@ -157,6 +284,14 @@
                           <Component id="jTextField1" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
+=======
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jTextField1" pref="30" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -185,6 +320,7 @@
                 </Component>
               </SubComponents>
             </Container>
+<<<<<<< Updated upstream
             <Component class="rojerusan.RSButtonHover" name="rSButtonHover2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
@@ -201,6 +337,18 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonHover2ActionPerformed"/>
               </Events>
+=======
+            <Component class="rojerusan.RSButtonHover" name="rSButtonHover5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="T&#x1ea1;o H&#xf3;a &#x110;&#x1a1;n"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+              </Properties>
+>>>>>>> Stashed changes
             </Component>
           </SubComponents>
         </Container>
@@ -214,7 +362,11 @@
             <Component class="rojeru_san.complementos.RSTableMetro" name="tblKhachHang2">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+<<<<<<< Updated upstream
                   <Table columnCount="1" rowCount="7">
+=======
+                  <Table columnCount="1" rowCount="8">
+>>>>>>> Stashed changes
                     <Column editable="true" title="H&#xf3;a &#x110;&#x1a1;n Ch&#x1edd;" type="java.lang.Object"/>
                   </Table>
                 </Property>
@@ -255,6 +407,11 @@
                 <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+<<<<<<< Updated upstream
+=======
+                <Property name="grosorBordeFilas" type="int" value="0"/>
+                <Property name="grosorBordeHead" type="int" value="0"/>
+>>>>>>> Stashed changes
                 <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[0, 0]"/>
                 </Property>
@@ -282,6 +439,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
                           <Component id="jScrollPane6" max="32767" attributes="0"/>
                           <Component id="jScrollPane7" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -290,6 +448,16 @@
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+=======
+                          <Component id="jScrollPane7" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jScrollPane6" alignment="0" pref="917" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="854" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -299,6 +467,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+<<<<<<< Updated upstream
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane7" pref="0" max="32767" attributes="0"/>
@@ -307,6 +476,16 @@
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="jScrollPane6" min="-2" pref="275" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+=======
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane7" min="-2" pref="347" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane6" min="-2" pref="285" max="-2" attributes="0"/>
+>>>>>>> Stashed changes
                   </Group>
               </Group>
             </DimensionLayout>
@@ -616,7 +795,11 @@
                                   <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+<<<<<<< Updated upstream
                           <EmptySpace pref="50" max="32767" attributes="0"/>
+=======
+                          <EmptySpace pref="17" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                           <Component id="kButton3" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1050,7 +1233,11 @@
                               <Component id="jLabel42" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< Updated upstream
                           <EmptySpace pref="47" max="32767" attributes="0"/>
+=======
+                          <EmptySpace max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                           <Component id="kButton4" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1193,10 +1380,17 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel37">
                   <Properties>
+<<<<<<< Updated upstream
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="T&#xea;n Ng&#x1b0;&#x1edd;i Nh&#x1ead;n:"/>
+=======
+                    <Property name="text" type="java.lang.String" value="T&#xea;n Ng&#x1b0;&#x1edd;i Nh&#x1ead;n:"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtHoTen20">
@@ -1212,18 +1406,32 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel38">
                   <Properties>
+<<<<<<< Updated upstream
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x110;i&#x1ec7;n Tho&#x1ea1;i:"/>
+=======
+                    <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x110;i&#x1ec7;n Tho&#x1ea1;i:"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel39">
                   <Properties>
+<<<<<<< Updated upstream
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a Ch&#x1ec9;:"/>
+=======
+                    <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a Ch&#x1ec9;:"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtHoTen21">
@@ -1239,10 +1447,17 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel40">
                   <Properties>
+<<<<<<< Updated upstream
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ghi Ch&#xfa;:"/>
+=======
+                    <Property name="text" type="java.lang.String" value="Ghi Ch&#xfa;:"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtHoTen22">
@@ -1269,29 +1484,50 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel41">
                   <Properties>
+<<<<<<< Updated upstream
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="T&#x1ed5;ng Ti&#x1ec1;n H&#xe0;ng:"/>
+=======
+                    <Property name="text" type="java.lang.String" value="T&#x1ed5;ng Ti&#x1ec1;n H&#xe0;ng:"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel42">
                   <Properties>
+<<<<<<< Updated upstream
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c Thanh To&#xe1;n:"/>
+=======
+                    <Property name="text" type="java.lang.String" value="H&#xec;nh Th&#x1ee9;c Thanh To&#xe1;n:"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="jRadioButton3">
                   <Properties>
+<<<<<<< Updated upstream
+=======
+                    <Property name="text" type="java.lang.String" value="Chuy&#x1ec3;n Kho&#x1ea3;n"/>
+>>>>>>> Stashed changes
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
                     </Property>
+<<<<<<< Updated upstream
                     <Property name="text" type="java.lang.String" value="Chuy&#x1ec3;n Kho&#x1ea3;n"/>
+=======
+>>>>>>> Stashed changes
                   </Properties>
                 </Component>
               </SubComponents>

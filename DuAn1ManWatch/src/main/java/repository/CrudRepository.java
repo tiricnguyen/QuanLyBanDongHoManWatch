@@ -152,4 +152,19 @@ public abstract class CrudRepository<K, Entity, Response> {
         return entity;
     }
 
+    public Entity timGmail(String email) {
+        Entity entitys = null;
+        try {
+            session = HibernateUtil.getSession();
+            String hql = "SELECT a FROM " + className + " a WHERE email =: email";
+            Query query = session.createQuery(hql);
+            query.setParameter("email", email);
+            entitys = (Entity) query.getSingleResult();
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+        return entitys;
+    }
 }

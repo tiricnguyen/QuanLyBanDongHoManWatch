@@ -31,7 +31,10 @@ public class ViewHoaDon extends javax.swing.JPanel {
 
     public ViewHoaDon() {
         initComponents();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     @SuppressWarnings("unchecked")
@@ -169,11 +172,19 @@ public class ViewHoaDon extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+<<<<<<< Updated upstream
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Đổi Hàng:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Chọn Serial muốn đổi:");
+=======
+        jLabel1.setText("Đổi Hàng:");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jLabel2.setText("Chọn Serial muốn đổi:");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+>>>>>>> Stashed changes
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -213,6 +224,7 @@ public class ViewHoaDon extends javax.swing.JPanel {
         );
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+<<<<<<< Updated upstream
 
         rSButtonIconI1.setBackground(new java.awt.Color(0, 153, 255));
         rSButtonIconI1.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_35px_1.png")); // NOI18N
@@ -228,6 +240,23 @@ public class ViewHoaDon extends javax.swing.JPanel {
         rSButtonIconI2.setBackground(new java.awt.Color(0, 153, 255));
         rSButtonIconI2.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
         rSButtonIconI2.setText("Đổi Hàng");
+=======
+
+        rSButtonIconI1.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_35px_1.png")); // NOI18N
+        rSButtonIconI1.setText("Export");
+        rSButtonIconI1.setBackground(new java.awt.Color(0, 153, 255));
+        rSButtonIconI1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("Trạng Thái Hóa Đơn:");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Tìm Kiếm:");
+
+        rSButtonIconI2.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
+        rSButtonIconI2.setText("Đổi Hàng");
+        rSButtonIconI2.setBackground(new java.awt.Color(0, 153, 255));
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -267,6 +296,7 @@ public class ViewHoaDon extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< Updated upstream
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -274,6 +304,18 @@ public class ViewHoaDon extends javax.swing.JPanel {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jComboBox2))))
+>>>>>>> Stashed changes
                     .addComponent(rSButtonIconI1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -298,8 +340,11 @@ public class ViewHoaDon extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
