@@ -7,18 +7,12 @@ package service.impl;
 import domainModel.NhanVien;
 import viewModel.NhanVienResponse;
 import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MailDateFormat;
-import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -84,7 +78,7 @@ public class NhanVienServiceImplm implements NhanVienService {
         if (nvMs != null) {
             return "Mã nvông được trùng";
         }
-        
+
         int cuoi = nv.getHoVaTen().lastIndexOf(" ");
         String name = nv.getHoVaTen().substring(cuoi);
         String notHoa = name.toLowerCase();
@@ -108,7 +102,6 @@ public class NhanVienServiceImplm implements NhanVienService {
         int i = (int) id;
         String ma = "NV00" + i;
         nv.setMa(ma);
-        
         NhanVien nvID = nhanVienRes.findById(nv.getId());
         if (nvID == null) {
             return "Không tìm thấy";
@@ -137,26 +130,8 @@ public class NhanVienServiceImplm implements NhanVienService {
         if (nvMs != null && !nvMs.getMa().equals(nv.getMa())) {
             return "Mã nvông được trùng";
         }
-        if (!nv.getMa().equals(nvID.getMa())) {
-            NhanVien nvMa = nhanVienRes.findByMa(nv.getMa());
-            if (nvMa != null) {
-                return "Mã nvông trùng";
-            } else {
-                nvID.setMa(nv.getMa());
-            }
-        }
-        nvID.setMa(nv.getMa());
-        nvID.setHoVaTen(nv.getHoVaTen());
-        nvID.setDiaChi(nv.getDiaChi());
-        nvID.setEmail(nv.getEmail());
-        nvID.setNgaySinh(nv.getNgaySinh());
-        nvID.setSdt(nv.getSdt());
-        nvID.setHinhAnh(nv.getHinhAnh());
-        nvID.setGioiTinh(nv.getGioiTinh());
-        nvID.setChucVu(nv.getChucVu());
-        nvID.setMatKhau(nv.getMatKhau());
-        nvID.setTrangThai(nv.getTrangThai());
-        nv = nhanVienRes.saveOrUpdate(nvID);
+
+        nv = nhanVienRes.saveOrUpdate(nv);
         if (nv != null) {
             return "Sửa thành công";
         } else {
@@ -196,18 +171,12 @@ public class NhanVienServiceImplm implements NhanVienService {
     }
 
     @Override
-    public String getLoGin(String Gmail, String MK) {
-        if (Gmail.trim().isEmpty()) {
-            return "Không để trống gmail";
-        } else if (MK.trim().isEmpty()) {
-            return "Không để mật khẩu";
+    public NhanVien getLoGin(String Gmail, String MK) {
+        NhanVien nv = nhanVienRes.findByGmailAndMK(Gmail, MK);
+        if (nv == null) {
+            return nv;
         } else {
-
-        }
-        if (nhanVienRes.findByGmailAndMK(Gmail, MK) == null) {
-            return "Tài khoản hoặc mật khẩu không đúng";
-        } else {
-            return "Đăng nhập thành công";
+            return nv;
         }
     }
 
@@ -236,25 +205,12 @@ public class NhanVienServiceImplm implements NhanVienService {
         return nhanVienRes.getAllByNameAndTrangThai(name, trangThai);
     }
 
-//    public static void main(String[] args) {
-//        NhanVienService nvsv = new NhanVienServiceImplm();
-//        List<NhanVienResponse> listnvrp = new ArrayList<>();
-//        listnvrp = nvsv.getAllByTrangThai(0);
-//        for (NhanVienResponse nhanVienResponse : listnvrp) {
-//            System.out.println(nhanVienResponse.toString());
-//        }
-//
-//    }
-//    public String UpdateTrangThaiNew(NhanVien nv, int tt) {
-//        nv.setTrangThai(tt);
-//        if (nhanVienRes.UpdateTrangThai(nv) != null) {
-//            return "Thành công";
-//        } else {
-//            return "Thất bại";
-//        }
-//    }
     public NhanVien findId(UUID id) {
         return nhanVienRes.findById(id);
+    }
+
+    public NhanVien finByMa(String ma) {
+        return nhanVienRes.findByMa(ma);
     }
 
     public String printExcel() {
@@ -323,4 +279,10 @@ public class NhanVienServiceImplm implements NhanVienService {
     public void chonAnh() {
 
     }
+
+    @Override
+    public NhanVien findByMa(String ma) {
+        return nhanVienRes.findByMa(ma);
+    }
+
 }

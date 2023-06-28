@@ -28,7 +28,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "VoucherSanPham")
-public class Voucher implements Serializable {
+public class VoucherSanPham implements Serializable {
 
     @Id
     @GeneratedValue
@@ -41,8 +41,8 @@ public class Voucher implements Serializable {
     @Column(name = "Ten")
     private String ten;
 
-    @Column(name = "PhanTram")
-    private String phanTram;
+    @Column(name = "PhamTram")
+    private Integer phamTram;
 
     @Column(name = "NgayBatDau")
     private String ngayBatDau;
@@ -55,7 +55,7 @@ public class Voucher implements Serializable {
 
     @Override
     public String toString() {
-        return "Voucher{" + "id=" + id + ", ma=" + ma + ", ten=" + ten + ", phanTram=" + phanTram + ", ngayBatDau=" + ngayBatDau + ", ngayKetThuc=" + ngayKetThuc + ", trangThai=" + trangThai + '}';
+        return "Voucher{" + "id=" + id + ", ma=" + ma + ", ten=" + ten + ", phanTram=" + phamTram + ", ngayBatDau=" + ngayBatDau + ", ngayKetThuc=" + ngayKetThuc + ", trangThai=" + trangThai + '}';
     }
 
     

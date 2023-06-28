@@ -28,16 +28,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" pref="1075" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" pref="555" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< Updated upstream
-          <Component id="jTabbedPane1" alignment="0" pref="635" max="32767" attributes="0"/>
-=======
-          <Component id="jTabbedPane1" alignment="0" pref="620" max="32767" attributes="0"/>
->>>>>>> Stashed changes
+          <Component id="jTabbedPane1" alignment="0" pref="610" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -78,7 +74,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel4" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -86,9 +82,10 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtTimKiem" min="-2" pref="327" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="739" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -124,7 +121,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                     <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                      <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
+                      <Color PropertyName="color" blue="3e" green="1f" red="e0" type="rgb"/>
                     </MatteColorBorder>
                   </Border>
                 </Property>
@@ -150,11 +147,11 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="725" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="705" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="810" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -162,7 +159,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="504" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="533" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -192,7 +189,7 @@
                           </Table>
                         </Property>
                         <Property name="colorBackgoundHead" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="99" red="0" type="rgb"/>
+                          <Color blue="3e" green="1f" red="e0" type="rgb"/>
                         </Property>
                         <Property name="colorBordeFilas" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -221,9 +218,6 @@
                         </Property>
                         <Property name="grosorBordeFilas" type="int" value="0"/>
                         <Property name="grosorBordeHead" type="int" value="0"/>
-                        <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[0, 0]"/>
-                        </Property>
                         <Property name="rowHeight" type="int" value="25"/>
                       </Properties>
                       <Events>
@@ -289,15 +283,8 @@
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="btnImport" pref="99" max="32767" attributes="0"/>
-<<<<<<< Updated upstream
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="btnSua" max="32767" attributes="0"/>
-                                          <Component id="btnThem" alignment="0" pref="99" max="32767" attributes="0"/>
-                                      </Group>
-=======
                                       <Component id="btnSua" alignment="1" max="32767" attributes="0"/>
                                       <Component id="btnThem" alignment="0" pref="99" max="32767" attributes="0"/>
->>>>>>> Stashed changes
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -351,11 +338,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnImport" min="-2" pref="35" max="-2" attributes="0"/>
-<<<<<<< Updated upstream
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
-=======
                           <EmptySpace max="32767" attributes="0"/>
->>>>>>> Stashed changes
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -363,11 +346,10 @@
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="txtMa">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                         <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                          <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
+                          <Color PropertyName="color" blue="3e" green="1f" red="e0" type="rgb"/>
                         </MatteColorBorder>
                       </Border>
                     </Property>
@@ -394,7 +376,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                         <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                          <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
+                          <Color PropertyName="color" blue="3e" green="1f" red="e0" type="rgb"/>
                         </MatteColorBorder>
                       </Border>
                     </Property>
@@ -421,7 +403,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                         <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                          <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
+                          <Color PropertyName="color" blue="3e" green="1f" red="e0" type="rgb"/>
                         </MatteColorBorder>
                       </Border>
                     </Property>
@@ -440,7 +422,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                         <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                          <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
+                          <Color PropertyName="color" blue="3e" green="1f" red="e0" type="rgb"/>
                         </MatteColorBorder>
                       </Border>
                     </Property>
@@ -450,8 +432,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSua">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="0" type="rgb"/>
+                      <Color blue="3e" green="1f" red="e0" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -460,8 +443,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnThem">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="0" type="rgb"/>
+                      <Color blue="3e" green="1f" red="e0" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -470,15 +454,20 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnImport">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="Export"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="0" type="rgb"/>
+                      <Color blue="3e" green="1f" red="e0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnImportActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnXoa">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="0" type="rgb"/>
+                      <Color blue="3e" green="1f" red="e0" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -487,8 +476,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnXoa1">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="L&#xe0;m M&#x1edb;i"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="0" type="rgb"/>
+                      <Color blue="3e" green="1f" red="e0" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -562,7 +552,7 @@
             <Component class="javax.swing.JButton" name="btnCapNhapKhachHangQuayLai">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="0" type="rgb"/>
+                  <Color blue="3e" green="1f" red="e0" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -582,7 +572,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                     <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                      <Color PropertyName="color" blue="ff" green="0" red="0" type="rgb"/>
+                      <Color PropertyName="color" blue="3e" green="1f" red="e0" type="rgb"/>
                     </MatteColorBorder>
                   </Border>
                 </Property>
@@ -608,7 +598,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1095" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -620,7 +610,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="610" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="533" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -650,7 +640,7 @@
                           </Table>
                         </Property>
                         <Property name="colorBackgoundHead" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="99" red="0" type="rgb"/>
+                          <Color blue="3e" green="1f" red="e0" type="rgb"/>
                         </Property>
                         <Property name="colorBordeFilas" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -678,9 +668,6 @@
                         </Property>
                         <Property name="grosorBordeFilas" type="int" value="0"/>
                         <Property name="grosorBordeHead" type="int" value="0"/>
-                        <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[0, 0]"/>
-                        </Property>
                         <Property name="rowHeight" type="int" value="25"/>
                       </Properties>
                       <Events>

@@ -23,7 +23,7 @@ public class SerialResponse {
     private UUID id;
     private String ma;
     private int trangThai;
-    private String chiTietSanPham;
+    private UUID chiTietSanPham;
 
     public Object[] toDataRow(int index) {
         return new Object[]{index, ma, trangThai, chiTietSanPham};

@@ -7,24 +7,54 @@
  */
 package view;
 
+import com.github.lgooddatepicker.components.DatePickerSettings;
+import com.github.sarxos.webcam.Webcam;
+import domainModel.NhanVien;
 import java.awt.FlowLayout;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Admin
  */
-public class ViewDemo extends javax.swing.JFrame {
+public class ViewMain extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewDemo
      */
-    public ViewDemo() {
+    private static NhanVien nvDN = new NhanVien();
+    private Webcam webcam = Webcam.getWebcams().get(0);
+
+    public ViewMain(NhanVien nv) {
         initComponents();
         prepareUI();
         setLocationRelativeTo(null);
+        nvDN = nv;
+//      LocalDate toDay = LocalDate.now();
+//      txtNgayMain.setText(String.valueOf(toDay));
+        loadGD(nv);
+    }
+
+    private void loadGD(NhanVien nv) {
+        anh.setImagen(new ImageIcon(nv.getHinhAnh()));
+        txtTennv.setText(nv.getHoVaTen());
+        if (nv.getChucVu() == 1) {
+            txtchucvu.setText("Trưởng Phòng");
+        } else {
+            txtchucvu.setText("Nhân Viên");
+        }
+
     }
 
     void prepareUI() {
@@ -58,16 +88,17 @@ public class ViewDemo extends javax.swing.JFrame {
         kGradientPanel7 = new com.k33ptoo.components.KGradientPanel();
         jLabel6 = new javax.swing.JLabel();
         kGradientPanel8 = new com.k33ptoo.components.KGradientPanel();
-        rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
+        anh = new rojerusan.RSPanelCircleImage();
         kGradientPanel11 = new com.k33ptoo.components.KGradientPanel();
         jLabel8 = new javax.swing.JLabel();
         kGradientPanel12 = new com.k33ptoo.components.KGradientPanel();
         jLabel9 = new javax.swing.JLabel();
         kButton2 = new com.k33ptoo.components.KButton();
-        jLabel1 = new javax.swing.JLabel();
+        txtTennv = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        txtchucvu = new javax.swing.JLabel();
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
+        rSLabelHora1 = new rojeru_san.RSLabelHora();
         pnlCards = new com.k33ptoo.components.KGradientPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,8 +108,8 @@ public class ViewDemo extends javax.swing.JFrame {
 
         kGradientPanel3.setBackground(new java.awt.Color(255, 255, 255));
         kGradientPanel3.setkBorderRadius(45);
-        kGradientPanel3.setkEndColor(new java.awt.Color(239, 244, 247));
-        kGradientPanel3.setkStartColor(new java.awt.Color(239, 244, 247));
+        kGradientPanel3.setkEndColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel3.setkStartColor(new java.awt.Color(255, 255, 255));
 
         kGradientPanel2.setBackground(new java.awt.Color(255, 255, 255));
         kGradientPanel2.setkBorderRadius(35);
@@ -87,8 +118,8 @@ public class ViewDemo extends javax.swing.JFrame {
         kGradientPanel2.setOpaque(false);
 
         btnSanPham.setkBorderRadius(25);
-        btnSanPham.setkEndColor(new java.awt.Color(150, 203, 255));
-        btnSanPham.setkStartColor(new java.awt.Color(150, 203, 255));
+        btnSanPham.setkEndColor(new java.awt.Color(224, 31, 62));
+        btnSanPham.setkStartColor(new java.awt.Color(224, 31, 62));
         btnSanPham.setOpaque(false);
         btnSanPham.setPreferredSize(new java.awt.Dimension(0, 85));
         btnSanPham.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,9 +151,9 @@ public class ViewDemo extends javax.swing.JFrame {
         );
 
         kButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        kButton1.setkBorderRadius(35);
-        kButton1.setkEndColor(new java.awt.Color(204, 204, 204));
-        kButton1.setkStartColor(new java.awt.Color(204, 204, 204));
+        kButton1.setkBorderRadius(60);
+        kButton1.setkEndColor(new java.awt.Color(224, 31, 62));
+        kButton1.setkStartColor(new java.awt.Color(224, 31, 62));
         kButton1.setLabel("Giao Dịch");
         kButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,22 +162,19 @@ public class ViewDemo extends javax.swing.JFrame {
         });
 
         kGradientPanel5.setkBorderRadius(25);
-        kGradientPanel5.setkEndColor(new java.awt.Color(150, 203, 255));
-        kGradientPanel5.setkStartColor(new java.awt.Color(150, 203, 255));
+        kGradientPanel5.setkEndColor(new java.awt.Color(224, 31, 62));
+        kGradientPanel5.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel5.setOpaque(false);
         kGradientPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kGradientPanel5MouseClicked(evt);
             }
         });
-<<<<<<< Updated upstream
-=======
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Nhân Viên");
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
         kGradientPanel5.setLayout(kGradientPanel5Layout);
@@ -166,22 +194,19 @@ public class ViewDemo extends javax.swing.JFrame {
         );
 
         kGradientPanel6.setkBorderRadius(25);
-        kGradientPanel6.setkEndColor(new java.awt.Color(150, 203, 255));
-        kGradientPanel6.setkStartColor(new java.awt.Color(150, 203, 255));
+        kGradientPanel6.setkEndColor(new java.awt.Color(224, 31, 62));
+        kGradientPanel6.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel6.setOpaque(false);
         kGradientPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kGradientPanel6MouseClicked(evt);
             }
         });
-<<<<<<< Updated upstream
-=======
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Hóa Đơn");
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout kGradientPanel6Layout = new javax.swing.GroupLayout(kGradientPanel6);
         kGradientPanel6.setLayout(kGradientPanel6Layout);
@@ -201,26 +226,20 @@ public class ViewDemo extends javax.swing.JFrame {
         );
 
         kGradientPanel7.setkBorderRadius(25);
-        kGradientPanel7.setkEndColor(new java.awt.Color(150, 203, 255));
-        kGradientPanel7.setkStartColor(new java.awt.Color(150, 203, 255));
+        kGradientPanel7.setkEndColor(new java.awt.Color(224, 31, 62));
+        kGradientPanel7.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel7.setOpaque(false);
-<<<<<<< Updated upstream
-=======
         kGradientPanel7.setPreferredSize(new java.awt.Dimension(100, 85));
->>>>>>> Stashed changes
         kGradientPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kGradientPanel7MouseClicked(evt);
             }
         });
-<<<<<<< Updated upstream
-=======
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Khách Hàng");
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
         kGradientPanel7.setLayout(kGradientPanel7Layout);
@@ -239,20 +258,20 @@ public class ViewDemo extends javax.swing.JFrame {
         kGradientPanel8.setkBorderRadius(250);
         kGradientPanel8.setkEndColor(new java.awt.Color(255, 51, 102));
         kGradientPanel8.setkGradientFocus(200);
-        kGradientPanel8.setkStartColor(new java.awt.Color(51, 204, 255));
+        kGradientPanel8.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel8.setOpaque(false);
 
-        rSPanelCircleImage1.setColorBorde(new java.awt.Color(102, 204, 255));
-        rSPanelCircleImage1.setImagen(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\13.jpg")); // NOI18N
+        anh.setColorBorde(new java.awt.Color(255, 255, 255));
+        anh.setImagen(null);
 
-        javax.swing.GroupLayout rSPanelCircleImage1Layout = new javax.swing.GroupLayout(rSPanelCircleImage1);
-        rSPanelCircleImage1.setLayout(rSPanelCircleImage1Layout);
-        rSPanelCircleImage1Layout.setHorizontalGroup(
-            rSPanelCircleImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout anhLayout = new javax.swing.GroupLayout(anh);
+        anh.setLayout(anhLayout);
+        anhLayout.setHorizontalGroup(
+            anhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 180, Short.MAX_VALUE)
         );
-        rSPanelCircleImage1Layout.setVerticalGroup(
-            rSPanelCircleImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        anhLayout.setVerticalGroup(
+            anhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 180, Short.MAX_VALUE)
         );
 
@@ -262,20 +281,20 @@ public class ViewDemo extends javax.swing.JFrame {
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(anh, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addContainerGap())
         );
         kGradientPanel8Layout.setVerticalGroup(
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(anh, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         kGradientPanel11.setkBorderRadius(25);
-        kGradientPanel11.setkEndColor(new java.awt.Color(150, 203, 255));
-        kGradientPanel11.setkStartColor(new java.awt.Color(150, 203, 255));
+        kGradientPanel11.setkEndColor(new java.awt.Color(224, 31, 62));
+        kGradientPanel11.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel11.setOpaque(false);
         kGradientPanel11.setPreferredSize(new java.awt.Dimension(0, 85));
         kGradientPanel11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -307,14 +326,19 @@ public class ViewDemo extends javax.swing.JFrame {
         );
 
         kGradientPanel12.setkBorderRadius(25);
-        kGradientPanel12.setkEndColor(new java.awt.Color(150, 203, 255));
-        kGradientPanel12.setkStartColor(new java.awt.Color(150, 203, 255));
+        kGradientPanel12.setkEndColor(new java.awt.Color(224, 31, 62));
+        kGradientPanel12.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel12.setOpaque(false);
+        kGradientPanel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kGradientPanel12MouseClicked(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("VouCher");
+        jLabel9.setText("Giao Ca");
 
         javax.swing.GroupLayout kGradientPanel12Layout = new javax.swing.GroupLayout(kGradientPanel12);
         kGradientPanel12.setLayout(kGradientPanel12Layout);
@@ -336,68 +360,62 @@ public class ViewDemo extends javax.swing.JFrame {
         kButton2.setForeground(new java.awt.Color(204, 204, 204));
         kButton2.setText("Thoát");
         kButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        kButton2.setkBorderRadius(1);
-        kButton2.setkEndColor(new java.awt.Color(204, 204, 204));
+        kButton2.setkBorderRadius(50);
+        kButton2.setkEndColor(new java.awt.Color(224, 31, 62));
         kButton2.setkPressedColor(new java.awt.Color(204, 204, 204));
-        kButton2.setkStartColor(new java.awt.Color(204, 204, 204));
+        kButton2.setkStartColor(new java.awt.Color(224, 31, 62));
         kButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kButton2ActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Nguyễn Công Tiến");
+        txtTennv.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtTennv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtTennv.setText("Nguyễn Công Tiến");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Chức Vụ : ");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Trưởng Phòng");
+        txtchucvu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtchucvu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtchucvu.setText("Trưởng Phòng");
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(kButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(kButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(kGradientPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                            .addComponent(btnSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                            .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(kGradientPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(kGradientPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                        .addGap(0, 10, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(txtTennv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(kGradientPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
+            .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtchucvu, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(kGradientPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(btnSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(kGradientPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(kGradientPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(kGradientPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,11 +423,11 @@ public class ViewDemo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(kGradientPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addComponent(txtTennv, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtchucvu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -430,19 +448,28 @@ public class ViewDemo extends javax.swing.JFrame {
         );
 
         kGradientPanel1.setkBorderRadius(30);
-        kGradientPanel1.setkEndColor(new java.awt.Color(10, 102, 194));
-        kGradientPanel1.setkStartColor(new java.awt.Color(10, 102, 194));
+        kGradientPanel1.setkEndColor(new java.awt.Color(224, 31, 62));
+        kGradientPanel1.setkStartColor(new java.awt.Color(224, 31, 62));
         kGradientPanel1.setOpaque(false);
+
+        rSLabelHora1.setForeground(new java.awt.Color(255, 255, 255));
+        rSLabelHora1.setFont(new java.awt.Font("Roboto Bold", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1461, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(1341, Short.MAX_VALUE)
+                .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSLabelHora1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pnlCards.setkBorderRadius(35);
@@ -458,7 +485,7 @@ public class ViewDemo extends javax.swing.JFrame {
         );
         pnlCardsLayout.setVerticalGroup(
             pnlCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 718, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
@@ -471,9 +498,9 @@ public class ViewDemo extends javax.swing.JFrame {
                     .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(kGradientPanel3Layout.createSequentialGroup()
                         .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pnlCards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel3Layout.setVerticalGroup(
             kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -502,8 +529,9 @@ public class ViewDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
-        new BanHangView().setVisible(true);
-
+        new BanHangView(nvDN).setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_kButton1ActionPerformed
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
@@ -512,6 +540,7 @@ public class ViewDemo extends javax.swing.JFrame {
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void btnSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSanPhamMouseClicked
+        webcam.close();
         ViewChiTietSanPham pnl = new ViewChiTietSanPham();
         pnlCards.removeAll();
         pnlCards.add(pnl);
@@ -521,88 +550,62 @@ public class ViewDemo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSanPhamMouseClicked
 
     private void kGradientPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel5MouseClicked
-<<<<<<< Updated upstream
+
         ViewNhanVien pnl = new ViewNhanVien();
-=======
-        ViewNhanVien1 pnl = new ViewNhanVien1();
->>>>>>> Stashed changes
         pnlCards.removeAll();
         pnlCards.add(pnl);
         pnlCards.setLayout(new FlowLayout());
         this.pack();
         pnlCards.setVisible(true);
+
     }//GEN-LAST:event_kGradientPanel5MouseClicked
 
     private void kGradientPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel7MouseClicked
+        webcam.close();
         ViewKhachHang pnl = new ViewKhachHang();
         pnlCards.removeAll();
         pnlCards.add(pnl);
         pnlCards.setLayout(new FlowLayout());
         this.pack();
         pnlCards.setVisible(true);
+
     }//GEN-LAST:event_kGradientPanel7MouseClicked
 
     private void kGradientPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel6MouseClicked
+        webcam.close();
         ViewHoaDon pnl = new ViewHoaDon();
         pnlCards.removeAll();
         pnlCards.add(pnl);
         pnlCards.setLayout(new FlowLayout());
         this.pack();
         pnlCards.setVisible(true);
+
     }//GEN-LAST:event_kGradientPanel6MouseClicked
 
-<<<<<<< Updated upstream
-=======
     private void kGradientPanel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel11MouseClicked
+        webcam.close();
         ViewThongKe pnl = new ViewThongKe();
         pnlCards.removeAll();
         pnlCards.add(pnl);
         pnlCards.setLayout(new FlowLayout());
         this.pack();
         pnlCards.setVisible(true);
+
     }//GEN-LAST:event_kGradientPanel11MouseClicked
 
->>>>>>> Stashed changes
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewDemo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewDemo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewDemo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewDemo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewDemo().setVisible(true);
-            }
-        });
-    }
+    private void kGradientPanel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kGradientPanel12MouseClicked
+        ViewGiaoCa pnl = new ViewGiaoCa(nvDN);
+        pnlCards.removeAll();
+        pnlCards.add(pnl);
+        pnlCards.setLayout(new FlowLayout());
+        this.pack();
+        pnlCards.setVisible(true);
+    }//GEN-LAST:event_kGradientPanel12MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSPanelCircleImage anh;
     private com.k33ptoo.components.KGradientPanel btnSanPham;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -621,6 +624,8 @@ public class ViewDemo extends javax.swing.JFrame {
     private com.k33ptoo.components.KGradientPanel kGradientPanel7;
     private com.k33ptoo.components.KGradientPanel kGradientPanel8;
     private com.k33ptoo.components.KGradientPanel pnlCards;
-    private rojerusan.RSPanelCircleImage rSPanelCircleImage1;
+    private rojeru_san.RSLabelHora rSLabelHora1;
+    private javax.swing.JLabel txtTennv;
+    private javax.swing.JLabel txtchucvu;
     // End of variables declaration//GEN-END:variables
 }

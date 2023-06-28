@@ -24,6 +24,7 @@ public class LoaiDongHoResponse {
     private UUID id;
     private String ma;
     private String ten;
+    private int trangThai;
 
 
     

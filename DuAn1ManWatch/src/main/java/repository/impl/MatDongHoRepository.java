@@ -21,7 +21,7 @@ public class MatDongHoRepository extends CrudRepository<UUID, MatDongHo, MatDong
     public MatDongHoRepository() {
 
         className = MatDongHo.class.getName();
-        res = "new viewModel.MatDongHoResponse(a.id, a.ma , a.mauSac, a.hinhDangMat , a.kieuMat, a.kichThuocMat)";
+        res = "new viewModel.MatDongHoResponse(a.id, a.ma , a.mauSac, a.hinhDangMat , a.ten, a.kichThuocMat , a.trangThai)";
         ten = "hinhDangMat";
         
     }

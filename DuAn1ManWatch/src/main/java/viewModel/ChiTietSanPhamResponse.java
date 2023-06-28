@@ -20,11 +20,15 @@ public class ChiTietSanPhamResponse {
 
     private UUID id;
 
-    private  String tenHang;
+    private String maSanPham;
+
+    private String tenHang;
 
     private String tenLoai;
 
     private String tenDongHo;
+
+    private String barCode;
 
     private String chongNuoc;
 
@@ -37,8 +41,10 @@ public class ChiTietSanPhamResponse {
     private String moTa;
 
     private String xuatXu;
-    
+
+    private int trangThai;
+
     public Object[] toDataRow(int index) {
-        return new Object[]{index, tenDongHo, tenHang, tenLoai, chongNuoc, sizeDay, soLuong, giaBan, moTa, xuatXu};
+        return new Object[]{index, tenDongHo, tenHang, tenLoai, barCode, chongNuoc, sizeDay, soLuong, giaBan, moTa, xuatXu};
     }
 }

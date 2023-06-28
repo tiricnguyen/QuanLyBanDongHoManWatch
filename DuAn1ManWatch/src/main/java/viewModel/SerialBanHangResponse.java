@@ -20,7 +20,8 @@ import lombok.Setter;
 public class SerialBanHangResponse {
 
     private UUID id;
+    private UUID hoaDonChiTiet;
     private String ma;
     private int trangThai;
-    private String hoaDonChiTiet;
+
 }

@@ -4,8 +4,10 @@
  */
 package viewModel;
 
+import java.util.Date;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +22,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class NhanVienResponse {
 
-  private UUID id;
+    private UUID id;
     private String ma;
     private String hoVaTen;
     private Integer gioiTinh;

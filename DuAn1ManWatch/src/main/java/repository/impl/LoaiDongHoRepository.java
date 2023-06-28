@@ -22,7 +22,7 @@ public class LoaiDongHoRepository extends CrudRepository<UUID, LoaiDongHo, LoaiD
 
         className = LoaiDongHo.class.getName();
 
-        res = "new viewModel.LoaiDongHoResponse(a.id, a.ma , a.ten)";
+        res = "new viewModel.LoaiDongHoResponse(a.id, a.ma , a.ten, a.trangThai)";
         ten = "ten";
     }
 

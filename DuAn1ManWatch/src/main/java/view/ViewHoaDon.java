@@ -1,40 +1,43 @@
-/*         
-                            +====================+
-                            |                    |
-                            |     TIRICNGUYEN    |
-                            |                    |
-                            +====================+  
- */
 package view;
 
 import domainModel.ChiTietSanPham;
-import domainModel.LoaiDongHo;
-import domainModel.SanPham;
+import domainModel.HoaDon;
+import domainModel.HoaDonChiTiet;
+import java.io.FileOutputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.DefaultComboBoxModel;
+import java.util.UUID;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
-import service.ChiTietSanPhamService;
-import service.LoaiDongHoService;
-import service.impl.ChiTietSanPhamServiceImpl;
-import service.impl.LoaiDongHoServiceImpl;
-import viewModel.ChiTietSanPhamResponse;
-import viewModel.LoaiDongHoResponse;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import service.HoaDonChiTietService;
+import service.HoaDonService;
+import service.SerialBanHangService;
+import service.impl.HoaDonChiTietServiceIplm;
+import service.impl.HoaDonServiceIplm;
+import service.impl.SerialBanHangServiceImpl;
+import viewModel.HoaDonChiTietResponse;
+import viewModel.HoaDonResponse;
+import viewModel.SerialBanHangResponse;
 
-/**
- *
- * @author Admin
- */
 public class ViewHoaDon extends javax.swing.JPanel {
 
+    private List<HoaDonResponse> listHD = new ArrayList<>();
+    private HoaDonService hoaDonService = new HoaDonServiceIplm();
+    private HoaDonChiTietService hoaDonChiTietService = new HoaDonChiTietServiceIplm();
+    private SerialBanHangService serialBanHangService = new SerialBanHangServiceImpl();
 
     public ViewHoaDon() {
         initComponents();
-<<<<<<< Updated upstream
+        listHD = hoaDonService.getAllResponse();
+        loadTableHoaDon(listHD);
 
-=======
->>>>>>> Stashed changes
     }
 
     @SuppressWarnings("unchecked")
@@ -42,11 +45,11 @@ public class ViewHoaDon extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane3 = new javax.swing.JScrollPane();
-        rSTableMetro2 = new rojeru_san.complementos.RSTableMetro();
+        tbHoaDon = new rojeru_san.complementos.RSTableMetro();
         jScrollPane4 = new javax.swing.JScrollPane();
-        rSTableMetro3 = new rojeru_san.complementos.RSTableMetro();
+        tblGioHang = new rojeru_san.complementos.RSTableMetro();
         jScrollPane5 = new javax.swing.JScrollPane();
-        rSTableMetro4 = new rojeru_san.complementos.RSTableMetro();
+        tblSerialBanHang = new rojeru_san.complementos.RSTableMetro();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -55,7 +58,7 @@ public class ViewHoaDon extends javax.swing.JPanel {
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbxTrangThai = new javax.swing.JComboBox<>();
         rSButtonIconI1 = new rojerusan.RSButtonIconI();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -65,73 +68,86 @@ public class ViewHoaDon extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1169,691)
         );
 
-        rSTableMetro2.setModel(new javax.swing.table.DefaultTableModel(
+        tbHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Mã HĐ", "Mã NV", "Khách Hàng", "SĐT", "Ngày Tạo", "Voucher", "Giảm Giá", "Tổng Tiền", "Ghi Chú", "Trạng Thái"
-            }
-        ));
-        rSTableMetro2.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
-        rSTableMetro2.setColorBordeFilas(new java.awt.Color(0, 153, 255));
-        rSTableMetro2.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setColorSelBackgound(new java.awt.Color(51, 204, 255));
-        rSTableMetro2.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro2.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro2.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rSTableMetro2.setGridColor(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setGrosorBordeFilas(0);
-        rSTableMetro2.setGrosorBordeHead(0);
-        rSTableMetro2.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        rSTableMetro2.setRowHeight(25);
-        jScrollPane3.setViewportView(rSTableMetro2);
 
-        rSTableMetro3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Mã Khách Hàng", "Tên Sản Phẩm", "Số Lượng", "Thành Tiền"
+                "Mã HĐ", "Tên NV", "Tên KH", "Mã Voucher", "Ngày Tạo", "Ngày Hẹn", "Giảm Giá", "Tên Người Nhận", "Số Điện Thoại", "Ghi Chú", "Trạng Thái"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        rSTableMetro3.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
-        rSTableMetro3.setColorBordeFilas(new java.awt.Color(0, 153, 255));
-        rSTableMetro3.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        rSTableMetro3.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro3.setColorSelBackgound(new java.awt.Color(51, 204, 255));
-        rSTableMetro3.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro3.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro3.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rSTableMetro3.setGridColor(new java.awt.Color(255, 255, 255));
-        rSTableMetro3.setGrosorBordeFilas(0);
-        rSTableMetro3.setGrosorBordeHead(0);
-        rSTableMetro3.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        rSTableMetro3.setRowHeight(25);
-        jScrollPane4.setViewportView(rSTableMetro3);
-        if (rSTableMetro3.getColumnModel().getColumnCount() > 0) {
-            rSTableMetro3.getColumnModel().getColumn(0).setResizable(false);
-            rSTableMetro3.getColumnModel().getColumn(1).setResizable(false);
-            rSTableMetro3.getColumnModel().getColumn(2).setResizable(false);
-            rSTableMetro3.getColumnModel().getColumn(3).setResizable(false);
+        tbHoaDon.setColorBackgoundHead(new java.awt.Color(224, 31, 62));
+        tbHoaDon.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tbHoaDon.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tbHoaDon.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tbHoaDon.setColorSelBackgound(new java.awt.Color(51, 204, 255));
+        tbHoaDon.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbHoaDon.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbHoaDon.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tbHoaDon.setGridColor(new java.awt.Color(255, 255, 255));
+        tbHoaDon.setGrosorBordeFilas(0);
+        tbHoaDon.setGrosorBordeHead(0);
+        tbHoaDon.setRowHeight(25);
+        tbHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbHoaDonMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tbHoaDon);
+        if (tbHoaDon.getColumnModel().getColumnCount() > 0) {
+            tbHoaDon.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        rSTableMetro4.setModel(new javax.swing.table.DefaultTableModel(
+        tblGioHang.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "STT", "Mã Sản Phẩm", "Tên Sản Phẩm", "Số Lượng", "Thành Tiền"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblGioHang.setColorBackgoundHead(new java.awt.Color(224, 31, 62));
+        tblGioHang.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblGioHang.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblGioHang.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblGioHang.setColorSelBackgound(new java.awt.Color(51, 204, 255));
+        tblGioHang.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblGioHang.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblGioHang.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblGioHang.setGridColor(new java.awt.Color(255, 255, 255));
+        tblGioHang.setGrosorBordeFilas(0);
+        tblGioHang.setGrosorBordeHead(0);
+        tblGioHang.setRowHeight(25);
+        tblGioHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblGioHangMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tblGioHang);
+        if (tblGioHang.getColumnModel().getColumnCount() > 0) {
+            tblGioHang.getColumnModel().getColumn(0).setResizable(false);
+            tblGioHang.getColumnModel().getColumn(1).setResizable(false);
+            tblGioHang.getColumnModel().getColumn(2).setResizable(false);
+            tblGioHang.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        tblSerialBanHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -150,41 +166,32 @@ public class ViewHoaDon extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        rSTableMetro4.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
-        rSTableMetro4.setColorBordeFilas(new java.awt.Color(0, 153, 255));
-        rSTableMetro4.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        rSTableMetro4.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro4.setColorSelBackgound(new java.awt.Color(51, 204, 255));
-        rSTableMetro4.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro4.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        rSTableMetro4.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rSTableMetro4.setGridColor(new java.awt.Color(255, 255, 255));
-        rSTableMetro4.setGrosorBordeFilas(0);
-        rSTableMetro4.setGrosorBordeHead(0);
-        rSTableMetro4.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        rSTableMetro4.setRowHeight(25);
-        jScrollPane5.setViewportView(rSTableMetro4);
-        if (rSTableMetro4.getColumnModel().getColumnCount() > 0) {
-            rSTableMetro4.getColumnModel().getColumn(0).setResizable(false);
+        tblSerialBanHang.setColorBackgoundHead(new java.awt.Color(224, 31, 62));
+        tblSerialBanHang.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblSerialBanHang.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblSerialBanHang.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblSerialBanHang.setColorSelBackgound(new java.awt.Color(51, 204, 255));
+        tblSerialBanHang.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblSerialBanHang.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblSerialBanHang.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblSerialBanHang.setGridColor(new java.awt.Color(255, 255, 255));
+        tblSerialBanHang.setGrosorBordeFilas(0);
+        tblSerialBanHang.setGrosorBordeHead(0);
+        tblSerialBanHang.setRowHeight(25);
+        jScrollPane5.setViewportView(tblSerialBanHang);
+        if (tblSerialBanHang.getColumnModel().getColumnCount() > 0) {
+            tblSerialBanHang.getColumnModel().getColumn(0).setResizable(false);
         }
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-<<<<<<< Updated upstream
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Đổi Hàng:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Chọn Serial muốn đổi:");
-=======
-        jLabel1.setText("Đổi Hàng:");
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel2.setText("Chọn Serial muốn đổi:");
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
->>>>>>> Stashed changes
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -193,10 +200,8 @@ public class ViewHoaDon extends javax.swing.JPanel {
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
         kGradientPanel1.setOpaque(false);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_search_25px_1.png")); // NOI18N
-
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(224, 31, 62)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -223,13 +228,21 @@ public class ViewHoaDon extends javax.swing.JPanel {
                     .addComponent(jTextField1)))
         );
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-<<<<<<< Updated upstream
+        cbxTrangThai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chờ  Thanh Toán", "Đã Hủy", "Đã Thanh Toán", "Tất Cả" }));
+        cbxTrangThai.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxTrangThaiItemStateChanged(evt);
+            }
+        });
 
-        rSButtonIconI1.setBackground(new java.awt.Color(0, 153, 255));
-        rSButtonIconI1.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_35px_1.png")); // NOI18N
+        rSButtonIconI1.setBackground(new java.awt.Color(224, 31, 62));
         rSButtonIconI1.setText("Export");
         rSButtonIconI1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconI1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Trạng Thái Hóa Đơn:");
@@ -237,26 +250,8 @@ public class ViewHoaDon extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Tìm Kiếm:");
 
-        rSButtonIconI2.setBackground(new java.awt.Color(0, 153, 255));
-        rSButtonIconI2.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
+        rSButtonIconI2.setBackground(new java.awt.Color(224, 31, 62));
         rSButtonIconI2.setText("Đổi Hàng");
-=======
-
-        rSButtonIconI1.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_xls_export_35px_1.png")); // NOI18N
-        rSButtonIconI1.setText("Export");
-        rSButtonIconI1.setBackground(new java.awt.Color(0, 153, 255));
-        rSButtonIconI1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("Trạng Thái Hóa Đơn:");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Tìm Kiếm:");
-
-        rSButtonIconI2.setIcon(new javax.swing.ImageIcon("E:\\QuanLyBanDongHoManWatch\\DuAn1ManWatch\\src\\main\\java\\folder\\icons8_female_user_update_35px.png")); // NOI18N
-        rSButtonIconI2.setText("Đổi Hàng");
-        rSButtonIconI2.setBackground(new java.awt.Color(0, 153, 255));
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -285,7 +280,7 @@ public class ViewHoaDon extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbxTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(rSButtonIconI1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -296,26 +291,13 @@ public class ViewHoaDon extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-<<<<<<< Updated upstream
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jComboBox2))))
->>>>>>> Stashed changes
+                        .addComponent(cbxTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rSButtonIconI1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -340,15 +322,42 @@ public class ViewHoaDon extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-<<<<<<< Updated upstream
 
+    private void tbHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHoaDonMouseClicked
+        int rowHDC = tbHoaDon.getSelectedRow();
+        HoaDon hd = hoaDonService.getAll().get(rowHDC);
+        loadGioHang(hoaDonChiTietService.getGioHang(hd.getId()));
+    }//GEN-LAST:event_tbHoaDonMouseClicked
 
-=======
->>>>>>> Stashed changes
+    private void tblGioHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblGioHangMouseClicked
+
+        int rowGH = tblGioHang.getSelectedRow();
+        HoaDonChiTietResponse hdctRe = hoaDonChiTietService.getAllReponse().get(rowGH);
+        List<SerialBanHangResponse> listSerialBanHang = serialBanHangService.getAllById(hdctRe.getId(), 1);
+        loadSerialBanHang(listSerialBanHang);
+    }//GEN-LAST:event_tblGioHangMouseClicked
+
+    private void cbxTrangThaiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxTrangThaiItemStateChanged
+        int index = cbxTrangThai.getSelectedIndex();
+        if (index == 0) {
+            loadTableHoaDon(hoaDonService.locTrangThai(0));
+        } else if (index == 1) {
+            loadTableHoaDon(hoaDonService.locTrangThai(1));
+        } else if (index == 2) {
+            loadTableHoaDon(hoaDonService.locTrangThai(2));
+        } else {
+            loadTableHoaDon(hoaDonService.getAllResponse());
+        }
+    }//GEN-LAST:event_cbxTrangThaiItemStateChanged
+
+    private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
+        printExcel();
+    }//GEN-LAST:event_rSButtonIconI1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbxTrangThai;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -363,8 +372,144 @@ public class ViewHoaDon extends javax.swing.JPanel {
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private rojerusan.RSButtonIconI rSButtonIconI1;
     private rojerusan.RSButtonIconI rSButtonIconI2;
-    private rojeru_san.complementos.RSTableMetro rSTableMetro2;
-    private rojeru_san.complementos.RSTableMetro rSTableMetro3;
-    private rojeru_san.complementos.RSTableMetro rSTableMetro4;
+    private rojeru_san.complementos.RSTableMetro tbHoaDon;
+    private rojeru_san.complementos.RSTableMetro tblGioHang;
+    private rojeru_san.complementos.RSTableMetro tblSerialBanHang;
     // End of variables declaration//GEN-END:variables
+
+    private void loadTableHoaDon(List<HoaDonResponse> list) {
+        DefaultTableModel dtm = (DefaultTableModel) tbHoaDon.getModel();
+        dtm.setRowCount(0);
+        for (HoaDonResponse x : list) {
+            dtm.addRow(x.toDaTaRow());
+        }
+    }
+
+    private void loadGioHang(List<HoaDonChiTietResponse> list) {
+
+        DefaultTableModel dtm = (DefaultTableModel) tblGioHang.getModel();
+        dtm.setRowCount(0);
+        int stt = 1;
+        for (HoaDonChiTietResponse x : list) {
+            dtm.addRow(new Object[]{stt++, x.getMaDongHo(), x.getTenDongHo(), x.getSoLuong(), x.getDonGia().multiply(BigDecimal.valueOf(x.getSoLuong()))});
+        }
+    }
+
+    private void loadSerialBanHang(List<SerialBanHangResponse> list) {
+        DefaultTableModel dtm = (DefaultTableModel) tblSerialBanHang.getModel();
+        dtm.setRowCount(0);
+        for (SerialBanHangResponse x : list) {
+            dtm.addRow(new Object[]{x.getMa()});
+        }
+
+    }
+
+    public void printExcel() {
+        HoaDonService hd = new HoaDonServiceIplm();
+        try {
+            XSSFWorkbook workbook = new XSSFWorkbook();
+            XSSFSheet sheet = workbook.createSheet("danh_sach_new");
+            XSSFRow row = null;
+            Cell cell = null;
+
+            row = sheet.createRow(0);
+            cell = row.createCell(0);
+            cell.setCellValue("Mã Hóa Đơn");
+
+            cell = row.createCell(1);
+            cell.setCellValue("Tên Nhân Viên ");
+
+            cell = row.createCell(2);
+            cell.setCellValue("Tên Khách Hàng");
+
+            cell = row.createCell(3);
+            cell.setCellValue("Mã Voucher");
+
+            cell = row.createCell(4);
+            cell.setCellValue("Ngày Tạo");
+
+            cell = row.createCell(5);
+            cell.setCellValue("Ngày Hẹn");
+
+            cell = row.createCell(6);
+            cell.setCellValue("Ngày Nhận");
+
+            cell = row.createCell(7);
+            cell.setCellValue("Giảm Giá");
+
+            cell = row.createCell(8);
+            cell.setCellValue("Tên Người Nhận");
+
+            cell = row.createCell(9);
+            cell.setCellValue("Số Điện Thoại");
+
+            cell = row.createCell(10);
+            cell.setCellValue("Ghi Chú");
+
+            cell = row.createCell(11);
+            cell.setCellValue("Trạng Thái");
+            List<HoaDonResponse> listExPort = hd.getAllResponse();
+            for (int i = 1; i < listExPort.size(); i++) {
+
+                row = sheet.createRow(i);
+                cell = row.createCell(0);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 0).toString());
+
+                cell = row.createCell(1);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 1).toString());
+
+                cell = row.createCell(2);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 2).toString());
+
+                cell = row.createCell(3);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 3).toString());
+
+                cell = row.createCell(4);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 4).toString());
+
+                cell = row.createCell(5);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 5).toString());
+
+                cell = row.createCell(6);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 6).toString());
+
+                cell = row.createCell(7);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 7).toString());
+
+                cell = row.createCell(8);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 8).toString());
+
+                cell = row.createCell(9);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 9).toString());
+
+                cell = row.createCell(10);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 10).toString());
+
+                cell = row.createCell(11);
+                cell.setCellValue(tbHoaDon.getValueAt(i, 11).toString());
+
+            }
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter fileName = new FileNameExtensionFilter("Excel Files", "xls", "xlsx", "xlsm");
+            chooser.setFileFilter(fileName);
+            if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                String path = chooser.getSelectedFile().getPath();
+                if (!path.contains(".xlsx")) {
+                    path += ".xlsx";
+                }
+                FileOutputStream fos = new FileOutputStream(path);
+                workbook.write(fos);
+                fos.flush();
+                fos.close();
+
+            }
+
+            JOptionPane.showMessageDialog(this, "Thành công");
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            JOptionPane.showMessageDialog(this, "Thất bại");
+        }
+
+    }
 }

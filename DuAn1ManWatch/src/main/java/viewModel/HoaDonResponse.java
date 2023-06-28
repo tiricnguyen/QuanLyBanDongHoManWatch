@@ -7,13 +7,20 @@
  */
 package viewModel;
 
+import domainModel.KhachHang;
+import domainModel.NhanVien;
+import domainModel.VoucherSanPham;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -23,23 +30,48 @@ public class HoaDonResponse {
     private UUID id;
     private String nhanVien;
     private String khachHang;
-    private String vouCher;
+    private String voucher;
     private String ma;
-    private String ngayTao;
-    private String ngayThanhToan;
-    private String ngayHen;
-    private String ngayGiaoHang;
-    private String ngayNhan;
-    private int giamGia;
-    private BigDecimal phiVanChuyen;
+    private Date ngayTao;
+    private Date ngayThanhToan;
+    private Date ngayHen;
+    private Integer giamGia;
     private String tenNguoiNhan;
     private String sdt;
-    private String diaChi;
+    private BigDecimal tienMat;
+    private BigDecimal chuyenKhoan;
+    private BigDecimal thanhTien;
     private String ghiChu;
-    private int trangThai;
+    private Integer trangThai;
 
-    public Object[] toDataRowHoaDonCho(int index) {
-        return new Object[]{index, ma};
-    }
    
+
+    public String getTrangThai(int trangThai) {
+        if (trangThai == 0) {
+            return "Chờ  Thanh Toán";
+        } else if (trangThai == 1) {
+            return "Đã Thanh Toán";
+        }
+        return "Đã Hủy";
+    }
+
+    public Object[] toDaTaRow() {
+        return new Object[]{
+            ma == null ? "" : ma,
+            nhanVien == null ? "" : nhanVien,
+            khachHang == null ? "" : khachHang,
+            voucher == null ? "" : voucher,
+            ngayTao == null ? "" : ngayTao,
+            ngayThanhToan == null ? "" : ngayThanhToan,
+            ngayHen == null ? "" : ngayHen,
+            giamGia == null ? "" : giamGia,
+            tenNguoiNhan == null ? "" : tenNguoiNhan,
+            sdt == null ? "" : sdt,
+            tienMat == null ? "" : tienMat,
+            chuyenKhoan == null ? "" : chuyenKhoan,
+            thanhTien == null ? "" : thanhTien,
+            ghiChu == null ? "''" : ghiChu,
+            getTrangThai(trangThai)
+        };
+    }
 }

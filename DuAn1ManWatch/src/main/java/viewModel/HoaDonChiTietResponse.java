@@ -7,6 +7,7 @@
  */
 package viewModel;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,9 +21,11 @@ import lombok.Setter;
 public class HoaDonChiTietResponse {
 
     private UUID id;
-    private String hoaDon;
-    private String chiTietSP;
-    private String soLuong;
-    private int donGia;
+    private UUID hoaDon;
+    private UUID chiTietSP;
+    private String maDongHo;
+    private String tenDongHo;
+    private int soLuong;
+    private BigDecimal donGia;
     private int trangThai;
 }

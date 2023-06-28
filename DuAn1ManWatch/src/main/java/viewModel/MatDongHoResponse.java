@@ -25,10 +25,11 @@ public class MatDongHoResponse {
     private String ma;
     private String mauSac;
     private String hinhDangMat;
-    private String kieuMat;
+    private String ten;
     private Float kichThuocMat;
+    private int trangThai;
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, ma, mauSac, hinhDangMat, kieuMat, kichThuocMat};
+        return new Object[]{index, ma, mauSac, hinhDangMat, ten, kichThuocMat};
     }
 }

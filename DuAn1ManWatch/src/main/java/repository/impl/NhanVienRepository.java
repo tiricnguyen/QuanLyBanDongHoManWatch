@@ -4,6 +4,7 @@
  */
 package repository.impl;
 
+import service.impl.*;
 import domainModel.NhanVien;
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;
@@ -19,7 +20,9 @@ import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
 import java.util.Properties;
 import java.util.UUID;
+import org.hibernate.query.Query;
 import repository.CrudRepository;
+import utillies.HibernateUtil;
 import viewModel.NhanVienResponse;
 
 /**
@@ -33,7 +36,25 @@ public class NhanVienRepository extends CrudRepository<UUID, NhanVien, NhanVienR
 
     public NhanVienRepository() {
         className = NhanVien.class.getName();
+
         res = " new viewModel.NhanVienResponse (a.id, a.ma,a.hoVaTen, a.gioiTinh, a.ngaySinh, a.email , a.hinhAnh, a.chucVu,a.diaChi , a.sdt, a.matKhau, a.trangThai)";
+    }
+
+    public NhanVien findByGmailAndMK(String Gmail, String MK) {
+        NhanVien entitys = null;
+        try {
+            session = HibernateUtil.getSession();
+            String hql = "SELECT a FROM " + className + " a WHERE email =: email and matKhau =: matKhau";
+            Query query = session.createQuery(hql);
+            query.setParameter("email", Gmail);
+            query.setParameter("matKhau", MK);
+            entitys = (NhanVien) query.getSingleResult();
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+        return entitys;
     }
 
     public String guiMail(String emailNhan,

@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BaoHanhRepository {
+public class BaoHanhResponse {
 
     private UUID id;
     private String nhanVien;

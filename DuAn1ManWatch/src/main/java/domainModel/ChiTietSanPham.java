@@ -1,13 +1,5 @@
 package domainModel;
 
-import domainModel.ChatLieuDay;
-import domainModel.ChatLieuMatKinh;
-import domainModel.ChatLieuVo;
-import domainModel.HangDongHo;
-import domainModel.LoaiDongHo;
-import domainModel.MatDongHo;
-import domainModel.NangLuongSuDung;
-import domainModel.SanPham;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -70,6 +62,9 @@ public class ChiTietSanPham implements Serializable {
     @JoinColumn(name = "IdChatLieuMatKinh")
     private ChatLieuMatKinh chatLieuMatKinh;
 
+    @Column(name = "BarCode")
+    private String barCode;
+    
     @Column(name = "ChongNuoc")
     private String chongNuoc;
 

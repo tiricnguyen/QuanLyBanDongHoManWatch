@@ -19,7 +19,7 @@ public interface NhanVienService {
 
     List<NhanVienResponse> getAllResponse();
 
-    String getLoGin(String Gmail, String MK);
+    NhanVien getLoGin(String Gmail, String MK);
 
     String insert(NhanVien nv);
 
@@ -39,4 +39,6 @@ public interface NhanVienService {
     String printExcel();
 
     NhanVien findId(UUID id);
+    
+    NhanVien findByMa(String ma);
 }

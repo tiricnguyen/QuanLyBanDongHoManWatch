@@ -9,6 +9,7 @@ package service;
 
 import domainModel.KhachHang;
 import java.util.List;
+import java.util.UUID;
 import viewModel.KhachHangResponse;
 
 /**
@@ -25,12 +26,17 @@ public interface KhachHangService {
 
     List<KhachHangResponse> getAllByTenOrTrangThai(String ten, int trangThai);
 
+    String printExcel();
+
+    KhachHang SaveOrUpdate(KhachHang kh);
+
+    KhachHang findId(UUID id);
+
     String insert(KhachHang kh);
 
     String update(KhachHang kh);
-<<<<<<< Updated upstream
-    
-=======
 
->>>>>>> Stashed changes
+    KhachHang findBySDT(String SDT);
+
+    List<KhachHangResponse> sreachSdt(String sdt, int tt);
 }
