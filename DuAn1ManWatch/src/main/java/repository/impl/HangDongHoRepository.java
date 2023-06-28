@@ -21,7 +21,7 @@ public class HangDongHoRepository extends CrudRepository<UUID, HangDongHo, HangD
     public HangDongHoRepository() {
 
         className = HangDongHo.class.getName();
-        res = "new viewModel.HangDongHoResponse(a.id, a.ma , a.ten)";
+        res = "new viewModel.HangDongHoResponse(a.id, a.ma , a.ten, a.trangThai)";
         ten = "ten";
     }
 

@@ -5,6 +5,7 @@ import domainModel.ChatLieuDay;
 import domainModel.ChatLieuMatKinh;
 import domainModel.ChatLieuVo;
 import domainModel.ChiTietSanPham;
+import domainModel.GiaoCa;
 import domainModel.HangDongHo;
 import domainModel.HoaDon;
 import domainModel.HoaDonChiTiet;
@@ -16,7 +17,7 @@ import domainModel.NhanVien;
 import domainModel.SanPham;
 import domainModel.Serial;
 import domainModel.SerialBanHang;
-import domainModel.Voucher;
+import domainModel.VoucherSanPham;
 import java.util.Properties;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -53,16 +54,15 @@ public class HibernateUtil {
         conf.addAnnotatedClass(ChatLieuMatKinh.class);
         conf.addAnnotatedClass(ChiTietSanPham.class);
         conf.addAnnotatedClass(Serial.class);
-
         conf.addAnnotatedClass(KhachHang.class);
         conf.addAnnotatedClass(NhanVien.class);
-        conf.addAnnotatedClass(Voucher.class);
+        conf.addAnnotatedClass(VoucherSanPham.class);
         conf.addAnnotatedClass(HoaDon.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
         conf.addAnnotatedClass(SerialBanHang.class);
         conf.addAnnotatedClass(BaoHanh.class);
+        conf.addAnnotatedClass(GiaoCa.class);
 
-//        conf.addAnnotatedClass(GioHangChiTiet.class);
         conf.setProperties(properties);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()

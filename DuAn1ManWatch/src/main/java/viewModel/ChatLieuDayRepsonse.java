@@ -25,6 +25,7 @@ public class ChatLieuDayRepsonse {
     private String ma;
     private String ten;
     private String mauSac;
+    private int trangThai;
 
     public Object[] toDataRow(int index) {
         return new Object[]{index, ma, ten, mauSac};

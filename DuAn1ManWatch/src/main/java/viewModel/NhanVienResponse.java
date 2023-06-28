@@ -4,8 +4,10 @@
  */
 package viewModel;
 
+import java.util.Date;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,12 +27,17 @@ public class NhanVienResponse {
     private String hoVaTen;
     private Integer gioiTinh;
     private String ngaySinh;
+    private String email;
+    private String hinhAnh;
     private Integer chucVu;
     private String diaChi;
     private String sdt;
+    private String matKhau;
+    private Integer trangThai;
+    
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, ma, hoVaTen, gioiTinh, ngaySinh, chucVu, diaChi, sdt};
+        return new Object[]{index, ma, hoVaTen, gioiTinh == 1? "Nam":"Nữ", ngaySinh, chucVu == 1? "Trưởng Phòng":"Nhân Viên", diaChi, sdt};
     }
 
 }

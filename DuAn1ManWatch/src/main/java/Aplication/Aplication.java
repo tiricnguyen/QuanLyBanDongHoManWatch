@@ -7,12 +7,14 @@
  */
 package Aplication;
 
+import view.MainDangNhap;
+
 /**
  *
  * @author Admin
  */
 public class Aplication {
     public static void main(String[] args) {
-        new view.ViewMain().setVisible(true);
+        new MainDangNhap().setVisible(true);
     }
 }

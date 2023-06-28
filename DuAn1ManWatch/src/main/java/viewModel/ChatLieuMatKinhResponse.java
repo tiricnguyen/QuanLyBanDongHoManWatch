@@ -28,6 +28,7 @@ public class ChatLieuMatKinhResponse {
     private String ten;
     private String sizeMatKinh;
     private String doDay;
+    private int trangThai;
     
     public Object[] toDataRow(int index){
         return new Object[]{index,ma,ten,sizeMatKinh,doDay};

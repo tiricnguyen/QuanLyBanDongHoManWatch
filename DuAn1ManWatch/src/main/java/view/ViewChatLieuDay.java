@@ -1,8 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
+
+import domainModel.ChatLieuDay;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import service.ChatLieuDayService;
+import service.impl.ChatLieuDayServiceImpl;
+import viewModel.ChatLieuDayRepsonse;
 
 /**
  *
@@ -10,11 +16,67 @@ package view;
  */
 public class ViewChatLieuDay extends javax.swing.JFrame {
 
+    private ChatLieuDayService chatLieuDayService = new ChatLieuDayServiceImpl();
+    private List<ChatLieuDayRepsonse> listCLD = new ArrayList<>();
+    private List<ChatLieuDayRepsonse> listCLD2 = new ArrayList<>();
+
     /**
      * Creates new form ViewChatLieuDay
      */
     public ViewChatLieuDay() {
         initComponents();
+        setLocationRelativeTo(null);
+        loadData();
+    }
+
+    private void showData(List<ChatLieuDayRepsonse> listCLD) {
+        DefaultTableModel dtm = new DefaultTableModel();
+        dtm.setColumnIdentifiers(new String[]{"STT", "Mã", "Tên", "Màu Sắc"});
+        tblChatLieuDay.setModel(dtm);
+        dtm.setRowCount(0);
+        int i = 1;
+        for (ChatLieuDayRepsonse x : listCLD) {
+            dtm.addRow(x.toDataRow(i++));
+        }
+    }
+
+    private void showData2(List<ChatLieuDayRepsonse> listCLD2) {
+        DefaultTableModel dtm = new DefaultTableModel();
+        dtm.setColumnIdentifiers(new String[]{"STT", "Mã", "Tên", "Màu Sắc"});
+        tblChatLieuDay1.setModel(dtm);
+        dtm.setRowCount(0);
+        int i = 1;
+        for (ChatLieuDayRepsonse x : listCLD2) {
+            dtm.addRow(x.toDataRow(i++));
+        }
+    }
+
+    private void loadData() {
+        listCLD = chatLieuDayService.getAllByTrangThai(1);
+        showData(listCLD);
+        for (ChatLieuDayRepsonse cld : listCLD) {
+            System.out.println(cld.toString());
+        }
+
+        listCLD2 = chatLieuDayService.getAllByTrangThai(0);
+        showData2(listCLD2);
+        for (ChatLieuDayRepsonse cld : listCLD2) {
+            System.out.println(cld.toString());
+        }
+    }
+
+    private void fillData(int i) {
+        ChatLieuDayRepsonse cld = listCLD.get(i);
+        txtMa.setText(cld.getMa());
+        txtTen.setText(cld.getTen());
+        txtMauSac.setText(cld.getMauSac());
+    }
+
+    private void fillData2(int i) {
+        ChatLieuDayRepsonse cld = listCLD2.get(i);
+        txtMa.setText(cld.getMa());
+        txtTen.setText(cld.getTen());
+        txtMauSac.setText(cld.getMauSac());
     }
 
     /**
@@ -39,20 +101,22 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
         cbTrangThai = new javax.swing.JCheckBox();
         btnThêm = new javax.swing.JButton();
         btnCapNhap = new javax.swing.JButton();
-        btnAn = new javax.swing.JButton();
-        btnNhapExcel = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
         btnXuatExcel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        Tab = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblKhachHang1 = new rojeru_san.complementos.RSTableMetro();
+        tblChatLieuDay = new rojeru_san.complementos.RSTableMetro();
+        btnAn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tblKhachHang2 = new rojeru_san.complementos.RSTableMetro();
+        tblChatLieuDay1 = new rojeru_san.complementos.RSTableMetro();
+        btnSuDung = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -122,33 +186,48 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbTrangThai)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         btnThêm.setBackground(new java.awt.Color(0, 153, 255));
         btnThêm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThêm.setForeground(new java.awt.Color(255, 255, 255));
         btnThêm.setText("Thêm");
+        btnThêm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThêmActionPerformed(evt);
+            }
+        });
 
         btnCapNhap.setBackground(new java.awt.Color(0, 153, 255));
         btnCapNhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCapNhap.setForeground(new java.awt.Color(255, 255, 255));
         btnCapNhap.setText("Cập Nhập");
+        btnCapNhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCapNhapActionPerformed(evt);
+            }
+        });
 
-        btnAn.setBackground(new java.awt.Color(0, 153, 255));
-        btnAn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAn.setForeground(new java.awt.Color(255, 255, 255));
-        btnAn.setText("Ẩn");
-
-        btnNhapExcel.setBackground(new java.awt.Color(0, 153, 255));
-        btnNhapExcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnNhapExcel.setForeground(new java.awt.Color(255, 255, 255));
-        btnNhapExcel.setText("Nhập");
+        btnThoat.setBackground(new java.awt.Color(0, 153, 255));
+        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Exit");
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThoatActionPerformed(evt);
+            }
+        });
 
         btnXuatExcel.setBackground(new java.awt.Color(0, 153, 255));
         btnXuatExcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnXuatExcel.setForeground(new java.awt.Color(255, 255, 255));
         btnXuatExcel.setText("Xuất");
+        btnXuatExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXuatExcelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -158,12 +237,12 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnNhapExcel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnThêm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCapNhap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnXuatExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnThêm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCapNhap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                        .addComponent(btnThoat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnXuatExcel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -175,13 +254,10 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                         .addComponent(btnThêm)
                         .addGap(25, 25, 25)
                         .addComponent(btnCapNhap)
-                        .addGap(25, 25, 25)
-                        .addComponent(btnAn)
-                        .addGap(25, 25, 25)
-                        .addComponent(btnNhapExcel)
-                        .addGap(25, 25, 25)
+                        .addGap(26, 26, 26)
                         .addComponent(btnXuatExcel)
-                        .addGap(0, 17, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnThoat))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -189,11 +265,16 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
         jLabel1.setText("Tìm Kiếm");
 
         txtTimKiem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 153, 255)));
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Chất Liệu Dây", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12)))); // NOI18N
 
-        tblKhachHang1.setModel(new javax.swing.table.DefaultTableModel(
+        tblChatLieuDay.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -204,50 +285,70 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblKhachHang1.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
-        tblKhachHang1.setColorBordeFilas(new java.awt.Color(0, 153, 255));
-        tblKhachHang1.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        tblKhachHang1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        tblKhachHang1.setColorSelBackgound(new java.awt.Color(255, 51, 51));
-        tblKhachHang1.setFocusCycleRoot(true);
-        tblKhachHang1.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tblKhachHang1.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tblKhachHang1.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tblKhachHang1.setGridColor(new java.awt.Color(255, 255, 255));
-        tblKhachHang1.setGrosorBordeFilas(0);
-        tblKhachHang1.setGrosorBordeHead(0);
-        tblKhachHang1.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblKhachHang1.setRowHeight(25);
-        tblKhachHang1.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblChatLieuDay.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
+        tblChatLieuDay.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblChatLieuDay.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblChatLieuDay.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblChatLieuDay.setColorSelBackgound(new java.awt.Color(255, 51, 51));
+        tblChatLieuDay.setFocusCycleRoot(true);
+        tblChatLieuDay.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblChatLieuDay.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblChatLieuDay.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblChatLieuDay.setGridColor(new java.awt.Color(255, 255, 255));
+        tblChatLieuDay.setGrosorBordeFilas(0);
+        tblChatLieuDay.setGrosorBordeHead(0);
+        tblChatLieuDay.setRowHeight(25);
+        tblChatLieuDay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblKhachHang1MouseClicked(evt);
+                tblChatLieuDayMouseClicked(evt);
             }
         });
-        jScrollPane4.setViewportView(tblKhachHang1);
+        tblChatLieuDay.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tblChatLieuDayKeyReleased(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tblChatLieuDay);
+
+        btnAn.setBackground(new java.awt.Color(0, 153, 255));
+        btnAn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAn.setForeground(new java.awt.Color(255, 255, 255));
+        btnAn.setText("Ẩn");
+        btnAn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(btnAn)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Sử Dụng", jPanel5);
+        Tab.addTab("Sử Dụng", jPanel5);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Chất Liệu Dây", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12)))); // NOI18N
 
-        tblKhachHang2.setModel(new javax.swing.table.DefaultTableModel(
+        tblChatLieuDay1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -258,45 +359,60 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblKhachHang2.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
-        tblKhachHang2.setColorBordeFilas(new java.awt.Color(0, 153, 255));
-        tblKhachHang2.setColorBordeHead(new java.awt.Color(255, 255, 255));
-        tblKhachHang2.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        tblKhachHang2.setColorSelBackgound(new java.awt.Color(255, 51, 51));
-        tblKhachHang2.setFocusCycleRoot(true);
-        tblKhachHang2.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tblKhachHang2.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tblKhachHang2.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tblKhachHang2.setGridColor(new java.awt.Color(255, 255, 255));
-        tblKhachHang2.setGrosorBordeFilas(0);
-        tblKhachHang2.setGrosorBordeHead(0);
-        tblKhachHang2.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tblKhachHang2.setRowHeight(25);
-        tblKhachHang2.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblChatLieuDay1.setColorBackgoundHead(new java.awt.Color(0, 153, 255));
+        tblChatLieuDay1.setColorBordeFilas(new java.awt.Color(0, 153, 255));
+        tblChatLieuDay1.setColorBordeHead(new java.awt.Color(255, 255, 255));
+        tblChatLieuDay1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblChatLieuDay1.setColorSelBackgound(new java.awt.Color(255, 51, 51));
+        tblChatLieuDay1.setFocusCycleRoot(true);
+        tblChatLieuDay1.setFuenteFilas(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblChatLieuDay1.setFuenteFilasSelect(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tblChatLieuDay1.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblChatLieuDay1.setGridColor(new java.awt.Color(255, 255, 255));
+        tblChatLieuDay1.setGrosorBordeFilas(0);
+        tblChatLieuDay1.setGrosorBordeHead(0);
+        tblChatLieuDay1.setRowHeight(25);
+        tblChatLieuDay1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblKhachHang2MouseClicked(evt);
+                tblChatLieuDay1MouseClicked(evt);
             }
         });
-        jScrollPane5.setViewportView(tblKhachHang2);
+        jScrollPane5.setViewportView(tblChatLieuDay1);
+
+        btnSuDung.setBackground(new java.awt.Color(0, 153, 255));
+        btnSuDung.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSuDung.setForeground(new java.awt.Color(255, 255, 255));
+        btnSuDung.setLabel("Sử dụng");
+        btnSuDung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuDungActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSuDung, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(btnSuDung)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Đã Ẩn", jPanel2);
+        Tab.addTab("Đã Ẩn", jPanel2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -309,7 +425,7 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
                 .addContainerGap())
@@ -319,13 +435,13 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jTabbedPane1))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Tab)))
                 .addContainerGap())
         );
 
@@ -343,17 +459,94 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblKhachHang1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHang1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblKhachHang1MouseClicked
+    private void tblChatLieuDayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblChatLieuDayMouseClicked
+       
+        int i = tblChatLieuDay.getSelectedRow();
+        fillData(i);
+    }//GEN-LAST:event_tblChatLieuDayMouseClicked
 
-    private void tblKhachHang2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHang2MouseClicked
+    private void tblChatLieuDay1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblChatLieuDay1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_tblKhachHang2MouseClicked
+        int i = tblChatLieuDay1.getSelectedRow();
+        fillData(i);
+    }//GEN-LAST:event_tblChatLieuDay1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnSuDungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuDungActionPerformed
+        int i = tblChatLieuDay1.getSelectedRow();
+        ChatLieuDayRepsonse cl = listCLD2.get(i);
+        ChatLieuDay cld = chatLieuDayService.findById(cl.getId());
+        cld.setTrangThai(1);
+        JOptionPane.showMessageDialog(this, "Khôi phục" + chatLieuDayService.update(cld));
+        loadData();
+    }//GEN-LAST:event_btnSuDungActionPerformed
+
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        new ViewChiTietSanPham().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThêmActionPerformed
+        // TODO add your handling code here:
+        ChatLieuDay cld = new ChatLieuDay();
+        cld.setMa(txtMa.getText());
+        cld.setTen(txtTen.getText());
+        cld.setMauSac(txtMauSac.getText());
+        cld.setTrangThai(1);
+        JOptionPane.showMessageDialog(this, chatLieuDayService.insert(cld));
+        loadData();
+    }//GEN-LAST:event_btnThêmActionPerformed
+
+    private void btnCapNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhapActionPerformed
+        // TODO add your handling code here:
+        int i = tblChatLieuDay.getSelectedRow();
+        ChatLieuDayRepsonse cl = listCLD.get(i);
+        ChatLieuDay cld = chatLieuDayService.findById(cl.getId());
+        cld.setMa(txtMa.getText());
+        cld.setTen(txtTen.getText());
+        cld.setMauSac(txtMauSac.getText());
+        JOptionPane.showMessageDialog(this, "Cập nhật" + chatLieuDayService.update(cld));
+        loadData();
+    }//GEN-LAST:event_btnCapNhapActionPerformed
+
+    private void btnAnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnActionPerformed
+        // TODO add your handling code here:
+        int i = tblChatLieuDay.getSelectedRow();
+        ChatLieuDayRepsonse cl = listCLD.get(i);
+        ChatLieuDay cld = chatLieuDayService.findById(cl.getId());
+        cld.setTrangThai(0);
+        JOptionPane.showMessageDialog(this, "Ẩn" + chatLieuDayService.update(cld));
+        loadData();
+    }//GEN-LAST:event_btnAnActionPerformed
+
+    private void btnXuatExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, chatLieuDayService.printExcel());
+    }//GEN-LAST:event_btnXuatExcelActionPerformed
+
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        // TODO add your handling code here:
+        if (Tab.getSelectedIndex() == 0) {
+            listCLD = chatLieuDayService.getAllByTenOrTrangThai(txtTimKiem.getText(), 1);
+            showData(listCLD);
+        } else {
+            listCLD2 = chatLieuDayService.getAllByTenOrTrangThai(txtTimKiem.getText(), 0);
+            showData2(listCLD2);
+        }
+    }//GEN-LAST:event_txtTimKiemKeyReleased
+
+    private void tblChatLieuDayKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblChatLieuDayKeyReleased
+        // TODO add your handling code here:
+        int x = tblChatLieuDay.getSelectedRow();
+            ChatLieuDayRepsonse cl = listCLD.get(x);
+            ChatLieuDay clv = chatLieuDayService.findById(cl.getId());
+            clv.setMa(tblChatLieuDay.getValueAt(x, 1).toString());
+            clv.setTen(tblChatLieuDay.getValueAt(x, 2).toString());
+            clv.setMauSac(tblChatLieuDay.getValueAt(x, 3).toString());
+            JOptionPane.showMessageDialog(this, "Cập nhật" + chatLieuDayService.update(clv));
+            loadData();
+    }//GEN-LAST:event_tblChatLieuDayKeyReleased
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -378,6 +571,12 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -388,9 +587,11 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane Tab;
     private javax.swing.JButton btnAn;
     private javax.swing.JButton btnCapNhap;
-    private javax.swing.JButton btnNhapExcel;
+    private javax.swing.JButton btnSuDung;
+    private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnThêm;
     private javax.swing.JButton btnXuatExcel;
     private javax.swing.JCheckBox cbTrangThai;
@@ -406,9 +607,8 @@ public class ViewChatLieuDay extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private rojeru_san.complementos.RSTableMetro tblKhachHang1;
-    private rojeru_san.complementos.RSTableMetro tblKhachHang2;
+    private rojeru_san.complementos.RSTableMetro tblChatLieuDay;
+    private rojeru_san.complementos.RSTableMetro tblChatLieuDay1;
     private javax.swing.JTextField txtMa;
     private javax.swing.JTextField txtMauSac;
     private javax.swing.JTextField txtTen;

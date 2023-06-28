@@ -24,6 +24,7 @@ public class SanPhamResponse {
     private UUID id;
     private String ma;
     private String ten;
+    private int trangThai;
 
     public Object[] toDataRow(int index) {
         return new Object[]{index, ma, ten};

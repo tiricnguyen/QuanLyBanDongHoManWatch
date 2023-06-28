@@ -26,6 +26,7 @@ public class ChatLieuVoResponse {
     private String ten;
     private String mauSac;
     private String moTa;
+    private int trangThai;
     
     
     public Object[] toDataRow(int index){

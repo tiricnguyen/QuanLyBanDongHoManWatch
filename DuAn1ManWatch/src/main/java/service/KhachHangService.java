@@ -26,8 +26,17 @@ public interface KhachHangService {
 
     List<KhachHangResponse> getAllByTenOrTrangThai(String ten, int trangThai);
 
+    String printExcel();
+
+    KhachHang SaveOrUpdate(KhachHang kh);
+
+    KhachHang findId(UUID id);
+
     String insert(KhachHang kh);
 
     String update(KhachHang kh);
-    
+
+    KhachHang findBySDT(String SDT);
+
+    List<KhachHangResponse> sreachSdt(String sdt, int tt);
 }

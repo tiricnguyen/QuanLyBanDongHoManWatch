@@ -1,4 +1,4 @@
- /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -24,11 +24,12 @@ public class VoucherResponse {
     private UUID id;
     private String ma;
     private String ten;
-    private Integer phanTram;
-    private Date ngayBatDau;
-    private Date ngayKetThuc;
+    private Integer phamTram;
+    private String ngayBatDau;
+    private String ngayKetThuc;
+    private int trangThai;
 
     public Object[] toDataRow(int index) {
-        return new Object[]{index, ma, ten, phanTram, ngayBatDau, ngayKetThuc};
+        return new Object[]{index, ma, ten, phamTram, ngayBatDau, ngayKetThuc};
     }
 }
